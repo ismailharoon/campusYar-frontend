@@ -251,29 +251,43 @@ h3, h4 { font-weight: 700; color: var(--dk); }
 .footer .logo-text { font-family: 'Bebas Neue', sans-serif; font-size: 22px; letter-spacing: 1px; }
 
 @media (max-width: 768px) {
-    .navbar { padding: 14px 20px; }
-    .nav-links { display: none; }
-    .hero { padding: 40px 20px 50px; }
-    .hero-heading { font-size: clamp(48px, 12vw, 72px); }
-    .hero-content { max-width: 100%; }
-    .hero-btns { flex-direction: column; align-items: stretch; }
-    .hero-btns button { width: 100%; text-align: center; }
+    .navbar { padding: 14px 20px !important; }
+    .nav-links { display: none !important; }
+    
+    .hero { padding: 40px 20px 50px !important; }
+    .hero-heading { font-size: 52px !important; }
+    .hero-content { max-width: 100% !important; }
+    .hero-btns { flex-direction: column !important; align-items: stretch !important; }
+    .hero-btns button { width: 100% !important; text-align: center !important; }
+    
+    /* Hide illustration on mobile */
+    aside { display: none !important; }
+    
+    /* Hero flex column on mobile */
+    .hero > div { flex-direction: column !important; }
+    
     .stats-bar {
-        margin: 30px 20px 0;
-        padding: 24px 20px;
-        flex-wrap: wrap;
-        gap: 16px;
+        margin: 20px 16px 0 !important;
+        padding: 20px 16px !important;
+        flex-wrap: wrap !important;
+        gap: 16px !important;
     }
-    .stat { flex: 0 0 45%; }
-    .stat-num { font-size: 36px; }
-    .stat-divider { display: none; }
-    .how-section { padding: 60px 20px; }
-    .steps-grid { grid-template-columns: 1fr; gap: 2px; }
-    .why-section { margin: 0 20px 40px; padding: 40px 20px; flex-direction: column; }
-    .quote-section { padding: 60px 20px; }
-    .quote-text { font-size: 17px; }
-    .cta-section { padding: 60px 20px; }
-    .footer { padding: 24px 20px; flex-direction: column; align-items: flex-start; gap: 16px; }
+    .stat { flex: 0 0 45% !important; }
+    .stat-num { font-size: 36px !important; }
+    .stat-divider { display: none !important; }
+    
+    .how-section { padding: 50px 16px !important; }
+    .steps-grid { grid-template-columns: 1fr !important; }
+    
+    .why-section { margin: 0 16px 40px !important; padding: 36px 16px !important; flex-direction: column !important; }
+    
+    .quote-section { padding: 50px 16px !important; }
+    .quote-text { font-size: 16px !important; }
+    
+    .cta-section { padding: 50px 16px !important; }
+    .cta-heading { font-size: 52px !important; }
+    
+    .footer { padding: 24px 16px !important; flex-direction: column !important; align-items: flex-start !important; gap: 16px !important; }
 }
 
 @media (max-width: 480px) {
