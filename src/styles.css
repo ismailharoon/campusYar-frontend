@@ -250,24 +250,38 @@ h3, h4 { font-weight: 700; color: var(--dk); }
 .footer-links span:hover { color: var(--o); }
 .footer .logo-text { font-family: 'Bebas Neue', sans-serif; font-size: 22px; letter-spacing: 1px; }
 
-/* Responsive */
-@media (max-width: 1024px) {
-    .steps-grid { grid-template-columns: repeat(3, 1fr); }
-}
 @media (max-width: 768px) {
-    .navbar { padding: 18px 24px; }
-    .hero { padding: 60px 24px 50px; }
-    .stats-bar { margin: 40px 24px 0; flex-wrap: wrap; padding: 28px 24px; }
-    .stat-divider { display: none; }
-    .how-section { padding: 70px 24px; }
-    .steps-grid { grid-template-columns: repeat(2, 1fr); }
-    .why-section { margin: 0 24px 50px; padding: 50px 24px; }
-    .quote-section { padding: 70px 24px; }
-    .cta-section { padding: 70px 24px; }
-    .footer { padding: 24px 24px; }
-}
-@media (max-width: 600px) {
+    .navbar { padding: 14px 20px; }
     .nav-links { display: none; }
-    .steps-grid { grid-template-columns: 1fr; }
-    .hero-btns { flex-direction: column; align-items: flex-start; }
+    .hero { padding: 40px 20px 50px; }
+    .hero-heading { font-size: clamp(48px, 12vw, 72px); }
+    .hero-content { max-width: 100%; }
+    .hero-btns { flex-direction: column; align-items: stretch; }
+    .hero-btns button { width: 100%; text-align: center; }
+    .stats-bar {
+        margin: 30px 20px 0;
+        padding: 24px 20px;
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+    .stat { flex: 0 0 45%; }
+    .stat-num { font-size: 36px; }
+    .stat-divider { display: none; }
+    .how-section { padding: 60px 20px; }
+    .steps-grid { grid-template-columns: 1fr; gap: 2px; }
+    .why-section { margin: 0 20px 40px; padding: 40px 20px; flex-direction: column; }
+    .quote-section { padding: 60px 20px; }
+    .quote-text { font-size: 17px; }
+    .cta-section { padding: 60px 20px; }
+    .footer { padding: 24px 20px; flex-direction: column; align-items: flex-start; gap: 16px; }
+}
+
+@media (max-width: 480px) {
+    .navbar { padding: 12px 16px; }
+    .nav-links { display: none; }
+    .hero { padding: 32px 16px 40px; }
+    .stats-bar { margin: 20px 16px 0; }
+    .how-section { padding: 50px 16px; }
+    .why-section { margin: 0 16px 30px; padding: 36px 16px; }
+    .cta-section { padding: 50px 16px; }
 }
