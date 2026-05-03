@@ -1,1 +1,273 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+    --o: #FF6B2B;
+    --od: #CC4A10;
+    --ol: #FFF0E8;
+    --dk: #111111;
+    --wh: #ffffff;
+    --gr: #F4F4F2;
+    --mu: #444444;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--wh);
+    color: var(--dk);
+    overflow-x: hidden;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+p { font-weight: 500; color: #444; line-height: 1.7; }
+h3, h4 { font-weight: 700; color: var(--dk); }
+
+/* Buttons */
+.btn-primary {
+    background: var(--o);
+    color: white;
+    border: none;
+    padding: 11px 24px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    transition: background 0.2s;
+}
+.btn-primary:hover { background: var(--od); }
+
+.btn-outline {
+    background: transparent;
+    color: var(--dk);
+    border: 2px solid #ccc;
+    padding: 16px 30px;
+    border-radius: 10px;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+}
+.btn-lg { padding: 16px 38px !important; font-size: 17px !important; border-radius: 10px !important; }
+.btn-xl { padding: 18px 50px !important; font-size: 18px !important; border-radius: 10px !important; }
+
+/* Navbar */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 40px;
+    border-bottom: 2px solid #E8E8E8;
+    background: white;
+    position: sticky;
+    top: 0;
+    z-index: 99;
+}
+.nav-logo { display: flex; align-items: center; gap: 10px; }
+.nav-icon {
+    width: 38px;
+    height: 38px;
+    background: var(--o);
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.nav-logo-img {
+    width: 22px;
+    height: 22px;
+    display: block;
+    object-fit: contain;
+}
+.logo-text {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 26px;
+    letter-spacing: 1px;
+    text-transform: none !important;
+}
+.logo-orange { color: var(--o); }
+.logo-dark { color: var(--dk); }
+.nav-links { display: flex; gap: 28px; font-size: 15px; font-weight: 600; color: #555; cursor: pointer; }
+.nav-links span:hover { color: var(--o); }
+
+/* Hero */
+.hero {
+    padding: 70px 40px 60px;
+    overflow: hidden;
+    position: relative;
+    background: #FFF6F0;
+}
+.hero-circle-right {
+    position: absolute; top: -40px; right: -80px;
+    width: 520px; height: 520px;
+    background: var(--ol); border-radius: 50%; z-index: 0; opacity: 0.8;
+}
+.hero-circle-left {
+    position: absolute; bottom: -80px; left: -60px;
+    width: 280px; height: 280px;
+    background: #FFE8D6; border-radius: 50%; z-index: 0; opacity: 0.5;
+}
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 960px;
+}
+.hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: white; border: 2px solid #FFD4BC;
+    padding: 8px 18px; border-radius: 20px;
+    font-size: 14px; font-weight: 700; color: var(--od);
+    margin-bottom: 24px;
+}
+.badge-dot {
+    width: 8px; height: 8px;
+    background: var(--o); border-radius: 50%; display: inline-block;
+    flex-shrink: 0;
+}
+.hero-heading {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(64px, 10vw, 120px);
+    line-height: 0.92;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+}
+.heading-dark { color: var(--dk) !important; }
+.heading-orange { color: var(--o) !important; }
+.heading-row { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+.hero-sub {
+    font-family: 'DM Sans', sans-serif;
+    font-size: clamp(15px, 2vw, 19px);
+    font-weight: 600; color: #444;
+    letter-spacing: 0; line-height: 1.65;
+    max-width: 340px; margin-top: 10px;
+}
+.hero-btns { display: flex; gap: 14px; margin-top: 40px; flex-wrap: wrap; }
+.hero-note { margin-top: 16px; font-size: 14px; color: #bbb; font-weight: 500; }
+
+/* Stats Bar */
+.stats-bar {
+    margin: 60px 40px 0;
+    background: var(--dk);
+    border-radius: 20px;
+    padding: 36px 40px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 0;
+}
+.stat { text-align: center; flex: 1; }
+.stat-num { font-family: 'Bebas Neue', sans-serif; font-size: 48px; color: var(--o); letter-spacing: 1px; line-height: 1; }
+.stat-label { font-size: 14px; color: #aaa; margin-top: 6px; font-weight: 600; }
+.stat-divider { width: 1px; min-width: 1px; height: 60px; background: #333; flex-shrink: 0; }
+
+/* How It Works */
+.how-section { padding: 90px 40px; background: white; }
+.section-heading {
+    display: flex; align-items: baseline; gap: 16px;
+    margin-bottom: 56px; flex-wrap: wrap;
+}
+.heading-dark-sm { font-family: 'Bebas Neue', sans-serif; font-size: clamp(48px, 7vw, 80px); color: var(--dk); letter-spacing: 1px; }
+.heading-orange-sm { font-family: 'Bebas Neue', sans-serif; font-size: clamp(48px, 7vw, 80px); color: var(--o); letter-spacing: 1px; }
+.heading-line { flex: 1; height: 3px; background: var(--o); margin-bottom: 12px; min-width: 40px; }
+
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 2px;
+    background: #E8E8E8;
+    border-radius: 18px;
+    overflow: hidden;
+}
+.step-card { background: white; padding: 32px 24px; min-height: 210px; }
+.step-card-orange { background: var(--o) !important; }
+.step-num { font-family: 'Bebas Neue', sans-serif; font-size: 52px; color: #EBEBEB; line-height: 1; margin-bottom: 12px; }
+.step-num-white { color: rgba(255,255,255,0.2) !important; }
+.step-bar { width: 36px; height: 4px; background: var(--o); margin-bottom: 16px; border-radius: 2px; }
+.step-bar-white { background: white !important; }
+.step-card h3 { font-size: 17px !important; margin-bottom: 10px; color: var(--dk) !important; }
+.step-card p { font-size: 14px !important; line-height: 1.7; color: #444 !important; }
+.white { color: white !important; }
+.white-muted { color: rgba(255,255,255,0.9) !important; font-size: 14px; line-height: 1.7; }
+
+/* Why Section */
+.why-section {
+    margin: 0 40px 60px;
+    border-radius: 20px;
+    background: var(--gr);
+    padding: 70px 40px;
+    display: flex;
+    align-items: center;
+    gap: 48px;
+    flex-wrap: wrap;
+}
+.why-left { flex: 1; min-width: 240px; }
+.why-heading { font-family: 'Bebas Neue', sans-serif; font-size: clamp(44px, 6vw, 76px); line-height: 0.95; letter-spacing: 1px; color: var(--dk); }
+.why-right { flex: 2; min-width: 280px; display: flex; flex-direction: column; gap: 22px; }
+.why-item { display: flex; gap: 16px; align-items: flex-start; }
+.why-icon {
+    width: 46px; height: 46px; min-width: 46px;
+    background: var(--o); border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+}
+.why-item h4 { font-size: 16px !important; margin-bottom: 5px; color: var(--dk) !important; }
+.why-item p { font-size: 14px !important; line-height: 1.7; color: #444 !important; }
+
+/* Quote Section */
+.quote-section { background: var(--dk); padding: 80px 40px; text-align: center; }
+.quote-mark { font-family: 'Bebas Neue', sans-serif; font-size: 64px; color: var(--o); line-height: 1; margin-bottom: 8px; }
+.quote-text { font-size: 20px; color: #D8D8D8; line-height: 1.85; max-width: 680px; margin: 0 auto 36px; font-style: italic; font-weight: 500; }
+.quote-author { display: flex; align-items: center; justify-content: center; gap: 14px; }
+.author-avatar {
+    width: 50px; height: 50px; flex-shrink: 0;
+    background: var(--o); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: white; font-weight: 700; font-size: 15px;
+}
+.author-name { color: white !important; font-size: 16px; font-weight: 700; text-align: left; }
+.author-title { color: #888 !important; font-size: 13px; font-weight: 500; text-align: left; }
+
+/* CTA Section */
+.cta-section { padding: 90px 40px; text-align: center; background: var(--ol); }
+.cta-heading { font-family: 'Bebas Neue', sans-serif; font-size: clamp(48px, 8vw, 100px); color: var(--dk); line-height: 0.95; margin-bottom: 24px; letter-spacing: 1px; }
+.cta-sub { color: #555; margin: 0 auto 36px; font-size: 18px; max-width: 480px; line-height: 1.7; font-weight: 600; }
+
+/* Footer */
+.footer {
+    padding: 28px 40px;
+    border-top: 2px solid #E8E8E8;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    background: white;
+}
+.footer-copy { font-size: 13px; color: #aaa; font-weight: 500; }
+.footer-links { display: flex; gap: 20px; font-size: 14px; color: #555; font-weight: 600; cursor: pointer; }
+.footer-links span:hover { color: var(--o); }
+.footer .logo-text { font-family: 'Bebas Neue', sans-serif; font-size: 22px; letter-spacing: 1px; }
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .steps-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 768px) {
+    .navbar { padding: 18px 24px; }
+    .hero { padding: 60px 24px 50px; }
+    .stats-bar { margin: 40px 24px 0; flex-wrap: wrap; padding: 28px 24px; }
+    .stat-divider { display: none; }
+    .how-section { padding: 70px 24px; }
+    .steps-grid { grid-template-columns: repeat(2, 1fr); }
+    .why-section { margin: 0 24px 50px; padding: 50px 24px; }
+    .quote-section { padding: 70px 24px; }
+    .cta-section { padding: 70px 24px; }
+    .footer { padding: 24px 24px; }
+}
+@media (max-width: 600px) {
+    .nav-links { display: none; }
+    .steps-grid { grid-template-columns: 1fr; }
+    .hero-btns { flex-direction: column; align-items: flex-start; }
+}
