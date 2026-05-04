@@ -1,0 +1,182 @@
+<section class="eligibility-shell">
+  <div class="page-header">
+    <div>
+      <p class="eyebrow">Eligibility Check</p>
+      <h1>Find your Germany fit in 4 steps</h1>
+      <p class="page-sub">Answer a few details and get a clear eligibility status with your German grade estimate.</p>
+    </div>
+    <button class="ghost-link" routerLink="/">← Back to home</button>
+  </div>
+
+  <form [formGroup]="form" class="stepper-card">
+    <mat-stepper linear>
+      <mat-step [stepControl]="goalGroup">
+        <ng-template matStepLabel>Goal</ng-template>
+        <div class="form-grid" [formGroup]="goalGroup">
+          <mat-form-field appearance="outline">
+            <mat-label>Degree level</mat-label>
+            <mat-select formControlName="degreeLevel" required>
+              <mat-option *ngFor="let level of degreeLevels" [value]="level">{{ level }}</mat-option>
+            </mat-select>
+            <mat-error *ngIf="goalGroup.get('degreeLevel')?.touched && goalGroup.get('degreeLevel')?.invalid">
+              Select a degree level.
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Target intake</mat-label>
+            <mat-select formControlName="targetIntake" required>
+              <mat-option *ngFor="let intake of intakes" [value]="intake">{{ intake }}</mat-option>
+            </mat-select>
+            <mat-error *ngIf="goalGroup.get('targetIntake')?.touched && goalGroup.get('targetIntake')?.invalid">
+              Choose an intake.
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Target program</mat-label>
+            <input matInput formControlName="targetProgram" placeholder="e.g., Computer Science" required />
+            <mat-error *ngIf="goalGroup.get('targetProgram')?.touched && goalGroup.get('targetProgram')?.invalid">
+              Enter the target program.
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="step-actions">
+          <button mat-raised-button color="primary" matStepperNext>Next</button>
+        </div>
+      </mat-step>
+
+      <mat-step [stepControl]="schoolGroup">
+        <ng-template matStepLabel>Academic - School</ng-template>
+        <div class="form-grid" [formGroup]="schoolGroup">
+          <mat-form-field appearance="outline">
+            <mat-label>Inter board</mat-label>
+            <mat-select formControlName="interBoard" required>
+              <mat-option *ngFor="let board of boards" [value]="board">{{ board }}</mat-option>
+            </mat-select>
+            <mat-error *ngIf="schoolGroup.get('interBoard')?.touched && schoolGroup.get('interBoard')?.invalid">
+              Select your board.
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Inter percentage</mat-label>
+            <input matInput formControlName="interPercentage" type="number" min="0" max="100" placeholder="e.g., 78" required />
+            <mat-error *ngIf="schoolGroup.get('interPercentage')?.touched && schoolGroup.get('interPercentage')?.invalid">
+              Provide a valid percentage.
+            </mat-error>
+          </mat-form-field>
+
+          <mat-slide-toggle *ngIf="showThirteenthYear" formControlName="thirteenthYearComplete">
+            13th year complete
+          </mat-slide-toggle>
+        </div>
+        <div class="step-actions">
+          <button mat-stroked-button matStepperPrevious>Back</button>
+          <button mat-raised-button color="primary" matStepperNext>Next</button>
+        </div>
+      </mat-step>
+
+      <mat-step [stepControl]="universityGroup">
+        <ng-template matStepLabel>Academic - University</ng-template>
+        <div class="form-grid" [formGroup]="universityGroup">
+          <mat-form-field appearance="outline">
+            <mat-label>University</mat-label>
+            <input
+              type="text"
+              matInput
+              formControlName="uniName"
+              [matAutocomplete]="auto"
+              placeholder="Type to search"
+              required
+            />
+            <mat-autocomplete #auto="matAutocomplete">
+              <mat-option *ngFor="let option of filteredUniversities | async" [value]="option">{{ option }}</mat-option>
+            </mat-autocomplete>
+            <mat-error *ngIf="universityGroup.get('uniName')?.touched && universityGroup.get('uniName')?.invalid">
+              Enter your university.
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Total CGPA</mat-label>
+            <input matInput formControlName="totalCGPA" type="number" min="0" max="4" placeholder="e.g., 3.4" required />
+            <mat-error *ngIf="universityGroup.get('totalCGPA')?.touched && universityGroup.get('totalCGPA')?.invalid">
+              Enter CGPA out of 4.0.
+            </mat-error>
+          </mat-form-field>
+
+          <mat-checkbox formControlName="isHecRecognized">HEC recognized</mat-checkbox>
+          <mat-checkbox *ngIf="showPec" formControlName="isPecRecognized">PEC recognized (Engineering only)</mat-checkbox>
+        </div>
+        <div class="step-actions">
+          <button mat-stroked-button matStepperPrevious>Back</button>
+          <button mat-raised-button color="primary" matStepperNext>Next</button>
+        </div>
+      </mat-step>
+
+      <mat-step [stepControl]="languageGroup">
+        <ng-template matStepLabel>Language</ng-template>
+        <div class="form-grid" [formGroup]="languageGroup">
+          <mat-form-field appearance="outline">
+            <mat-label>Test type</mat-label>
+            <mat-select formControlName="testType" required>
+              <mat-option *ngFor="let test of testTypes" [value]="test">{{ test }}</mat-option>
+            </mat-select>
+            <mat-error *ngIf="languageGroup.get('testType')?.touched && languageGroup.get('testType')?.invalid">
+              Choose a test type.
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Overall score</mat-label>
+            <input matInput formControlName="overallScore" type="number" min="0" max="120" placeholder="e.g., 7.5" />
+            <mat-error *ngIf="languageGroup.get('overallScore')?.touched && languageGroup.get('overallScore')?.invalid">
+              Provide a valid score or select None.
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="step-actions">
+          <button mat-stroked-button matStepperPrevious>Back</button>
+          <button mat-raised-button color="primary" (click)="submit()">See results</button>
+        </div>
+      </mat-step>
+    </mat-stepper>
+  </form>
+
+  <div class="auth-modal" *ngIf="showAuthModal">
+    <div class="modal-backdrop" (click)="closeModal()"></div>
+    <div class="modal-card">
+      <button class="modal-close" type="button" (click)="closeModal()">×</button>
+      <p class="eyebrow">Login required</p>
+      <h2 class="modal-title">Log in to see your results</h2>
+      <p class="modal-sub">Your details are saved. Log in to unlock pricing and dashboard.</p>
+
+      <form [formGroup]="loginForm" class="modal-form">
+        <mat-form-field appearance="outline">
+          <mat-label>Email</mat-label>
+          <input matInput type="email" formControlName="email" placeholder="you@example.com" required />
+          <mat-error *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.invalid">Enter a valid email.</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Password</mat-label>
+          <input matInput type="password" formControlName="password" required />
+          <mat-error *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.invalid">
+            Password must be at least 6 characters.
+          </mat-error>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" (click)="submitLogin()">Log in</button>
+        <button mat-stroked-button type="button" class="google-btn" (click)="continueWithGoogle()">
+          Continue with Google
+        </button>
+
+        <p class="modal-switch">
+          Don't have an account?
+          <a routerLink="/signup" (click)="closeModal()">Sign up</a>
+        </p>
+      </form>
+    </div>
+  </div>
+</section>

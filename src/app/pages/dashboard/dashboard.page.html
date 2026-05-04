@@ -1,0 +1,38 @@
+<section class="dashboard-shell">
+  <header class="dashboard-header">
+    <div>
+      <p class="eyebrow">Result dashboard</p>
+      <h1>Your Germany readiness snapshot</h1>
+      <p>Based on the details you provided, here is your current eligibility picture.</p>
+    </div>
+    <a class="text-link" routerLink="/eligibility">Edit details</a>
+  </header>
+
+  <div class="dashboard-grid">
+    <article class="result-card">
+      <h3>German Grade (VPD)</h3>
+      <div class="grade">{{ germanGrade || '—' }}</div>
+      <p>Calculated using the Bavarian Formula on a 4.0 scale.</p>
+    </article>
+
+    <article class="result-card">
+      <h3>Status</h3>
+      <div class="status" [class.status-eligible]="status === 'Eligible'" [class.status-conditional]="status === 'Conditional'">
+        {{ status }}
+      </div>
+      <p>We will refine this after official university shortlisting.</p>
+    </article>
+
+    <article class="result-card summary">
+      <h3>Profile summary</h3>
+      <ul>
+        <li><strong>Degree:</strong> {{ data.degreeLevel || '—' }}</li>
+        <li><strong>Intake:</strong> {{ data.targetIntake || '—' }}</li>
+        <li><strong>Program:</strong> {{ data.targetProgram || '—' }}</li>
+        <li><strong>University:</strong> {{ data.uniName || '—' }}</li>
+        <li><strong>CGPA:</strong> {{ data.totalCGPA || '—' }}</li>
+        <li><strong>Language:</strong> {{ data.testType || '—' }}</li>
+      </ul>
+    </article>
+  </div>
+</section>

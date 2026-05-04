@@ -1,0 +1,259 @@
+<!-- Navbar -->
+<header>
+  <nav class="navbar" role="navigation" aria-label="Main Navigation">
+    <a class="nav-logo" routerLink="/">
+      <div class="nav-icon" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+          <circle cx="11" cy="8" r="4.5" fill="white" />
+          <path d="M3 18 Q11 13 19 18" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" />
+        </svg>
+      </div>
+      <span style="font-family: 'DM Sans', sans-serif; font-size: 22px; font-weight: 800; letter-spacing: 0.5px">
+        <span style="color: #ff6b2b">Campus</span><span style="color: #111111">Yar</span>
+      </span>
+    </a>
+    <ul class="nav-links" style="list-style: none; display: flex; gap: 20px">
+      <li><a href="#how-it-works" style="text-decoration: none; color: inherit">How it works</a></li>
+      <li><a href="#features" style="text-decoration: none; color: inherit">Features</a></li>
+      <li><a href="#about" style="text-decoration: none; color: inherit">About</a></li>
+      <li><a routerLink="/eligibility" style="text-decoration: none; color: inherit">Eligibility</a></li>
+      <li><a routerLink="/pricing" style="text-decoration: none; color: inherit">Pricing</a></li>
+    </ul>
+    <button class="btn-primary" routerLink="/signup">Get started free</button>
+  </nav>
+</header>
+
+<main>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-circle-right"></div>
+    <div class="hero-circle-left"></div>
+    <div style="display: flex; align-items: center; justify-content: space-between; gap: 40px; position: relative; z-index: 1">
+      <article class="hero-content" style="flex: 1; min-width: 300px; max-width: 560px">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          Built by a student who lost thousands of euros to a bad consultant
+        </div>
+
+        <!-- CRITICAL SEO: Only one H1 per page -->
+        <h1 style="display: contents">
+          <div class="hero-heading">
+            <div class="heading-dark">STUDY IN</div>
+            <div class="heading-orange">GERMANY</div>
+            <div class="heading-dark">THE RIGHT</div>
+            <div class="heading-row">
+              <span class="heading-dark">WAY.</span>
+              <span class="hero-sub"
+                >No consultant fees. No hidden agendas. Honest AI powered guidance for Pakistani students based on your actual
+                profile.</span
+              >
+            </div>
+          </div>
+        </h1>
+
+        <div class="hero-btns">
+          <button class="btn-primary btn-lg" aria-label="Check Eligibility Now" routerLink="/eligibility">Check my eligibility →</button>
+          <button class="btn-outline btn-lg">See how it works</button>
+        </div>
+        <p class="hero-note">Free to start · No credit card needed</p>
+      </article>
+
+      <!-- Illustration (Simplified for Bots) -->
+      <aside style="flex: 1; min-width: 400px; display: flex; justify-content: center; align-items: center" aria-hidden="true">
+        <svg width="560" height="500" viewBox="0 0 420 380" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="210" cy="190" r="170" fill="#FFF0E8" opacity="0.8" />
+          <circle cx="210" cy="190" r="130" fill="#FFE8D6" opacity="0.5" />
+          <rect x="100" y="220" width="220" height="12" rx="6" fill="#CC4A10" />
+          <rect x="115" y="130" width="190" height="95" rx="8" fill="#111111" />
+          <rect x="123" y="138" width="174" height="80" rx="4" fill="#1a1a2e" />
+          <rect x="130" y="145" width="160" height="8" rx="2" fill="#FF6B2B" opacity="0.8" />
+          <rect x="130" y="158" width="100" height="4" rx="2" fill="white" opacity="0.3" />
+          <rect x="130" y="166" width="130" height="4" rx="2" fill="white" opacity="0.2" />
+          <rect x="130" y="174" width="80" height="4" rx="2" fill="white" opacity="0.2" />
+          <rect x="130" y="182" width="110" height="4" rx="2" fill="#FF6B2B" opacity="0.4" />
+          <rect x="130" y="190" width="90" height="4" rx="2" fill="white" opacity="0.2" />
+          <rect x="130" y="198" width="60" height="10" rx="3" fill="#FF6B2B" />
+          <circle cx="210" cy="95" r="28" fill="#F4A261" />
+          <ellipse cx="210" cy="74" rx="28" ry="14" fill="#2D1B00" />
+          <rect x="182" y="74" width="56" height="10" rx="2" fill="#2D1B00" />
+          <rect x="175" y="120" width="70" height="55" rx="10" fill="#FF6B2B" />
+          <rect x="148" y="125" width="30" height="12" rx="6" fill="#F4A261" />
+          <rect x="242" y="125" width="30" height="12" rx="6" fill="#F4A261" />
+          <path d="M195 120 L210 135 L225 120" stroke="white" stroke-width="2" fill="none" />
+          <rect x="290" y="100" width="80" height="50" rx="10" fill="white" opacity="0.95" />
+          <rect x="295" y="108" width="70" height="10" rx="2" fill="#111" />
+          <rect x="295" y="120" width="70" height="10" rx="2" fill="#CC0000" />
+          <rect x="295" y="132" width="70" height="10" rx="2" fill="#FFCE00" />
+          <circle cx="80" cy="150" r="28" fill="#FF6B2B" />
+          <path d="M68 150 L76 158 L92 142" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+          <text x="320" y="85" font-size="16" fill="#FF6B2B">★</text>
+          <text x="60" y="250" font-size="12" fill="#FF6B2B" opacity="0.6">★</text>
+          <text x="350" y="200" font-size="10" fill="#FF6B2B" opacity="0.4">★</text>
+          <rect x="55" y="180" width="55" height="65" rx="6" fill="white" opacity="0.9" />
+          <rect x="62" y="190" width="40" height="4" rx="2" fill="#E8E8E8" />
+          <rect x="62" y="198" width="35" height="4" rx="2" fill="#E8E8E8" />
+          <rect x="62" y="206" width="40" height="4" rx="2" fill="#FF6B2B" opacity="0.5" />
+          <rect x="62" y="214" width="30" height="4" rx="2" fill="#E8E8E8" />
+          <rect x="62" y="222" width="20" height="8" rx="3" fill="#FF6B2B" />
+          <rect x="310" y="240" width="70" height="55" rx="8" fill="white" opacity="0.9" />
+          <circle cx="345" cy="262" r="14" fill="none" stroke="#FF6B2B" stroke-width="2" stroke-dasharray="3 2" />
+          <text x="337" y="267" font-size="10" fill="#FF6B2B" font-weight="bold">VISA</text>
+          <rect x="318" y="280" width="54" height="4" rx="2" fill="#E8E8E8" />
+          <rect x="318" y="288" width="40" height="4" rx="2" fill="#E8E8E8" />
+          <circle cx="160" cy="310" r="4" fill="#FF6B2B" opacity="0.3" />
+          <circle cx="175" cy="310" r="4" fill="#FF6B2B" opacity="0.5" />
+          <circle cx="190" cy="310" r="4" fill="#FF6B2B" opacity="0.7" />
+          <circle cx="205" cy="310" r="4" fill="#FF6B2B" />
+          <circle cx="220" cy="310" r="4" fill="#FF6B2B" opacity="0.7" />
+          <circle cx="235" cy="310" r="4" fill="#FF6B2B" opacity="0.5" />
+          <circle cx="250" cy="310" r="4" fill="#FF6B2B" opacity="0.3" />
+        </svg>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Stats Bar -->
+  <section class="stats-bar" aria-label="Key Features Statistics">
+    <div class="stat">
+      <div class="stat-num">FREE</div>
+      <p class="stat-label">To start</p>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat">
+      <div class="stat-num">0%</div>
+      <p class="stat-label">University commission</p>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat">
+      <div class="stat-num">100%</div>
+      <p class="stat-label">Honest guidance</p>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat">
+      <div class="stat-num">AI</div>
+      <p class="stat-label">Facts based</p>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section id="how-it-works" class="how-section">
+    <div class="section-heading">
+      <h2 class="heading-dark-sm">HOW <span class="heading-orange-sm">IT WORKS</span></h2>
+      <div class="heading-line"></div>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card">
+        <span class="step-num">01</span>
+        <div class="step-bar"></div>
+        <h3>Enter your profile</h3>
+        <p>CGPA, degree, IELTS, and budget all in one place for a precise check.</p>
+      </div>
+      <div class="step-card">
+        <span class="step-num">02</span>
+        <div class="step-bar"></div>
+        <h3>Honest eligibility check</h3>
+        <p>We flag weak areas in your profile instead of hiding them just to push applications.</p>
+      </div>
+      <div class="step-card">
+        <span class="step-num">03</span>
+        <div class="step-bar"></div>
+        <h3>Shortlist universities</h3>
+        <p>Filtered by your profile, budget, and specific field of study in Germany.</p>
+      </div>
+      <div class="step-card">
+        <span class="step-num">04</span>
+        <div class="step-bar"></div>
+        <h3>AI document prep</h3>
+        <p>Automatic SOP generator and full checklists tailored to your selected university.</p>
+      </div>
+      <div class="step-card step-card-orange">
+        <span class="step-num step-num-white">05</span>
+        <div class="step-bar step-bar-white"></div>
+        <h3 class="white">Visa roadmap</h3>
+        <p class="white-muted">Step-by-step guide for appointments, blocked accounts, and document filing.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why CampusYar -->
+  <section id="features" class="why-section">
+    <div class="why-left">
+      <h2 class="why-heading">WHY<br /><span class="heading-orange">CAMPUS</span><br />YAR?</h2>
+    </div>
+    <div class="why-right">
+      <div class="why-item">
+        <div class="why-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+            <path d="M4 11l5 5 9-9" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </div>
+        <div>
+          <h4>Zero conflict of interest</h4>
+          <p>We don't earn from universities. Our only goal is your success in Germany.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+            <path d="M4 11l5 5 9-9" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </div>
+        <div>
+          <h4>Profile-first approach</h4>
+          <p>We check your actual eligibility before encouraging you to apply for any program.</p>
+        </div>
+      </div>
+      <div class="why-item">
+        <div class="why-icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+            <path d="M4 11l5 5 9-9" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </div>
+        <div>
+          <h4>Born from Personal Experience</h4>
+          <p>We’ve been in your shoes. Our mission is to protect students from the misinformation of high fee consultants.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Founder Quote -->
+  <section class="quote-section" id="about">
+    <blockquote style="border: none; margin: 0; padding: 0">
+      <div class="quote-mark" aria-hidden="true">"</div>
+      <p class="quote-text">
+        I paid thousands of euros to a consultant. Wrong program. Wrong guidance. Visa rejected. I built CampusYar so no Pakistani
+        student has to go through this again.
+      </p>
+      <footer class="quote-author">
+        <div class="author-avatar">IH</div>
+        <div>
+          <div class="author-name">Ismail Haroon</div>
+          <div class="author-title">Founder, CampusYar</div>
+        </div>
+      </footer>
+    </blockquote>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <h2 class="cta-heading">START FOR <span class="heading-orange">FREE TODAY</span></h2>
+    <p class="cta-sub">Join thousands of students applying to Germany with honest guidance. No hidden agendas.</p>
+    <button class="btn-primary btn-xl" routerLink="/eligibility">Check my eligibility now →</button>
+  </section>
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-brand">
+    <span style="font-family: 'DM Sans', sans-serif; font-size: 22px; font-weight: 800; letter-spacing: 0.5px">
+      <span style="color: #ff6b2b">Campus</span><span style="color: #111111">Yar</span>
+    </span>
+  </div>
+  <p class="footer-copy">© 2026 CampusYar - Pakistan's most honest study abroad guide for Germany.</p>
+  <div class="footer-links">
+    <a href="#">Privacy Policy</a>
+    <a href="#">Terms of Service</a>
+    <a href="#">Contact Us</a>
+  </div>
+</footer>

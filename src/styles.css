@@ -1,3 +1,4 @@
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap');
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -10,6 +11,10 @@
     --wh: #ffffff;
     --gr: #F4F4F2;
     --mu: #444444;
+    --primary: var(--o);
+    --mdc-theme-primary: #FF6B2B;
+    --mdc-theme-secondary: #CC4A10;
+    --mat-sys-primary: #FF6B2B;
 }
 
 body {
@@ -23,6 +28,91 @@ body {
 
 p { font-weight: 500; color: #444; line-height: 1.7; }
 h3, h4 { font-weight: 700; color: var(--dk); }
+
+.eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 8px;
+}
+
+/* Material adjustments */
+.mat-mdc-form-field {
+    width: 100%;
+}
+
+.mat-mdc-raised-button.mat-primary,
+.mat-mdc-unelevated-button.mat-primary {
+    --mdc-protected-button-container-color: var(--primary);
+    --mdc-protected-button-label-text-color: #ffffff;
+    background-color: var(--o) !important;
+    border-color: var(--o) !important;
+}
+
+.mat-mdc-stroked-button.mat-primary {
+    --mdc-outlined-button-outline-color: var(--o);
+    --mdc-outlined-button-label-text-color: var(--o);
+    border-color: var(--o) !important;
+}
+
+.mat-mdc-button.mat-primary {
+    color: var(--o);
+}
+
+.mat-mdc-raised-button.mat-primary .mdc-button__label,
+.mat-mdc-unelevated-button.mat-primary .mdc-button__label {
+    color: #ffffff !important;
+}
+
+.mat-mdc-stroked-button.mat-primary .mdc-button__label {
+    color: var(--o) !important;
+}
+
+.mat-mdc-form-field.mat-focused .mdc-notched-outline__leading,
+.mat-mdc-form-field.mat-focused .mdc-notched-outline__trailing,
+.mat-mdc-form-field.mat-focused .mdc-notched-outline__notch {
+    border-color: var(--o) !important;
+}
+
+.mat-mdc-form-field.mat-focused .mat-mdc-floating-label {
+    color: var(--o) !important;
+}
+
+.mat-mdc-select-arrow {
+    color: var(--o);
+}
+
+.mat-mdc-checkbox.mat-accent .mdc-checkbox__background {
+    border-color: var(--o);
+}
+
+.mat-mdc-checkbox.mat-accent.mat-mdc-checkbox-checked .mdc-checkbox__background,
+.mat-mdc-checkbox.mat-accent.mat-mdc-checkbox-indeterminate .mdc-checkbox__background {
+    background-color: var(--o);
+    border-color: var(--o);
+}
+
+.mat-mdc-slide-toggle.mat-accent .mdc-switch__track {
+    background-color: #ffd4bc;
+}
+
+.mat-mdc-slide-toggle.mat-accent .mdc-switch__handle {
+    background-color: var(--o);
+}
+
+.mat-step-icon-selected,
+.mat-step-icon-state-edit,
+.mat-step-icon-state-done {
+    background-color: var(--o) !important;
+    color: #ffffff !important;
+}
+
+.mat-step-header .mat-step-label.mat-step-label-active,
+.mat-step-header .mat-step-label.mat-step-label-selected {
+    color: var(--o) !important;
+}
 
 /* Buttons */
 .btn-primary {
