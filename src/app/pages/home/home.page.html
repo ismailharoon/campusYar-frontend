@@ -1,30 +1,5 @@
-<!-- Navbar -->
-<header>
-  <nav class="navbar" role="navigation" aria-label="Main Navigation">
-    <a class="nav-logo" routerLink="/">
-      <div class="nav-icon" aria-hidden="true">
-        <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
-          <circle cx="11" cy="8" r="4.5" fill="white" />
-          <path d="M3 18 Q11 13 19 18" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" />
-        </svg>
-      </div>
-      <span style="font-family: 'DM Sans', sans-serif; font-size: 22px; font-weight: 800; letter-spacing: 0.5px">
-        <span style="color: #ff6b2b">Campus</span><span style="color: #111111">Yar</span>
-      </span>
-    </a>
-    <ul class="nav-links" style="list-style: none; display: flex; gap: 20px">
-      <li><a href="#how-it-works" style="text-decoration: none; color: inherit">How it works</a></li>
-      <li><a href="#features" style="text-decoration: none; color: inherit">Features</a></li>
-      <li><a href="#about" style="text-decoration: none; color: inherit">About</a></li>
-      <li><a routerLink="/eligibility" style="text-decoration: none; color: inherit">Eligibility</a></li>
-      <li><a routerLink="/pricing" style="text-decoration: none; color: inherit">Pricing</a></li>
-    </ul>
-    <button class="btn-primary" routerLink="/signup">Get started free</button>
-  </nav>
-</header>
-
-<main>
-  <!-- Hero Section -->
+<!-- Hero Section -->
+<main >
   <section class="hero">
     <div class="hero-circle-right"></div>
     <div class="hero-circle-left"></div>
@@ -137,36 +112,36 @@
 
   <!-- How It Works -->
   <section id="how-it-works" class="how-section">
-    <div class="section-heading">
+    <div class="section-heading" appScrollReveal>
       <h2 class="heading-dark-sm">HOW <span class="heading-orange-sm">IT WORKS</span></h2>
       <div class="heading-line"></div>
     </div>
     <div class="steps-grid">
-      <div class="step-card">
+      <div class="step-card" appScrollReveal>
         <span class="step-num">01</span>
         <div class="step-bar"></div>
         <h3>Enter your profile</h3>
         <p>CGPA, degree, IELTS, and budget all in one place for a precise check.</p>
       </div>
-      <div class="step-card">
+      <div class="step-card" appScrollReveal>
         <span class="step-num">02</span>
         <div class="step-bar"></div>
         <h3>Honest eligibility check</h3>
         <p>We flag weak areas in your profile instead of hiding them just to push applications.</p>
       </div>
-      <div class="step-card">
+      <div class="step-card" appScrollReveal>
         <span class="step-num">03</span>
         <div class="step-bar"></div>
         <h3>Shortlist universities</h3>
         <p>Filtered by your profile, budget, and specific field of study in Germany.</p>
       </div>
-      <div class="step-card">
+      <div class="step-card" appScrollReveal>
         <span class="step-num">04</span>
         <div class="step-bar"></div>
         <h3>AI document prep</h3>
         <p>Automatic SOP generator and full checklists tailored to your selected university.</p>
       </div>
-      <div class="step-card step-card-orange">
+      <div class="step-card step-card-orange" appScrollReveal>
         <span class="step-num step-num-white">05</span>
         <div class="step-bar step-bar-white"></div>
         <h3 class="white">Visa roadmap</h3>
@@ -181,7 +156,7 @@
       <h2 class="why-heading">WHY<br /><span class="heading-orange">CAMPUS</span><br />YAR?</h2>
     </div>
     <div class="why-right">
-      <div class="why-item">
+      <div class="why-item" appScrollReveal>
         <div class="why-icon" aria-hidden="true">
           <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
             <path d="M4 11l5 5 9-9" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
@@ -192,7 +167,7 @@
           <p>We don't earn from universities. Our only goal is your success in Germany.</p>
         </div>
       </div>
-      <div class="why-item">
+      <div class="why-item" appScrollReveal>
         <div class="why-icon" aria-hidden="true">
           <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
             <path d="M4 11l5 5 9-9" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
@@ -203,7 +178,7 @@
           <p>We check your actual eligibility before encouraging you to apply for any program.</p>
         </div>
       </div>
-      <div class="why-item">
+      <div class="why-item" appScrollReveal>
         <div class="why-icon" aria-hidden="true">
           <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
             <path d="M4 11l5 5 9-9" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
@@ -218,7 +193,7 @@
   </section>
 
   <!-- Founder Quote -->
-  <section class="quote-section" id="about">
+  <section class="quote-section" id="about" appScrollReveal>
     <blockquote style="border: none; margin: 0; padding: 0">
       <div class="quote-mark" aria-hidden="true">"</div>
       <p class="quote-text">
@@ -236,24 +211,9 @@
   </section>
 
   <!-- CTA Section -->
-  <section class="cta-section">
+  <section class="cta-section" appScrollReveal>
     <h2 class="cta-heading">START FOR <span class="heading-orange">FREE TODAY</span></h2>
     <p class="cta-sub">Join thousands of students applying to Germany with honest guidance. No hidden agendas.</p>
     <button class="btn-primary btn-xl" routerLink="/eligibility">Check my eligibility now →</button>
   </section>
 </main>
-
-<!-- Footer -->
-<footer class="footer">
-  <div class="footer-brand">
-    <span style="font-family: 'DM Sans', sans-serif; font-size: 22px; font-weight: 800; letter-spacing: 0.5px">
-      <span style="color: #ff6b2b">Campus</span><span style="color: #111111">Yar</span>
-    </span>
-  </div>
-  <p class="footer-copy">© 2026 CampusYar - Pakistan's most honest study abroad guide for Germany.</p>
-  <div class="footer-links">
-    <a href="#">Privacy Policy</a>
-    <a href="#">Terms of Service</a>
-    <a href="#">Contact Us</a>
-  </div>
-</footer>

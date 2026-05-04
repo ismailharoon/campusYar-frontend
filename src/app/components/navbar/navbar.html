@@ -1,0 +1,28 @@
+<!-- Navbar -->
+<header>
+  <nav class="navbar" role="navigation" aria-label="Main Navigation" [class.scrolled]="isScrolled">
+    <a class="nav-logo" routerLink="/" (click)="scrollToTop()">
+      <div class="nav-icon" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+          <circle cx="11" cy="8" r="4.5" fill="white" />
+          <path d="M3 18 Q11 13 19 18" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" />
+        </svg>
+      </div>
+      <span style="font-family: 'DM Sans', sans-serif; font-size: 22px; font-weight: 800; letter-spacing: 0.5px">
+        <span style="color: #ff6b2b">Campus</span><span style="color: #111111">Yar</span>
+      </span>
+    </a>
+    <ul class="nav-links" style="list-style: none; display: flex; gap: 20px">
+      <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" style="text-decoration: none; color: inherit">Home</a></li>
+      <li><a href="#how-it-works" style="text-decoration: none; color: inherit">How it works</a></li>
+      <li><a href="#features" style="text-decoration: none; color: inherit">Features</a></li>
+      <li><a href="#about" style="text-decoration: none; color: inherit">About</a></li>
+      <li><a routerLink="/eligibility" routerLinkActive="active" style="text-decoration: none; color: inherit">Eligibility</a></li>
+      <li><a routerLink="/pricing" routerLinkActive="active" style="text-decoration: none; color: inherit">Pricing</a></li>
+    </ul>
+    <div style="display: flex; gap: 12px; align-items: center;">
+      <button class="btn-login" routerLink="/login">Login</button>
+      <button class="btn-primary" routerLink="/signup">Get started free</button>
+    </div>
+  </nav>
+</header>

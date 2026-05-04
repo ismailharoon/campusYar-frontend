@@ -1,0 +1,23 @@
+/* Footer */
+.footer {
+    padding: 28px 40px;
+    border-top: 2px solid #E8E8E8;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    background: white;
+}
+.footer-copy { font-size: 13px; color: #aaa; font-weight: 500; }
+.footer-links { display: flex; gap: 20px; font-size: 14px; color: #555; font-weight: 600; cursor: pointer; }
+.footer-links a:hover { color: var(--o); }
+.footer .logo-text { font-family: 'Bebas Neue', sans-serif; font-size: 22px; letter-spacing: 1px; }
+
+@media (max-width: 768px) {
+    .footer { padding: 24px 16px !important; flex-direction: column !important; align-items: flex-start !important; gap: 16px !important; }
+}
+
+@media (max-width: 480px) {
+    .footer { padding: 24px 16px !important; flex-direction: column !important; align-items: flex-start !important; gap: 16px !important; }
+}

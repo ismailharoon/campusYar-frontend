@@ -13,6 +13,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatStepperModule } from '@angular/material/stepper';
 import { AuthService } from '../../services/auth.service';
 import { DegreeLevel, EligibilityData, EligibilityService, Intake, TestType } from '../../services/eligibility.service';
+import { ScrollRevealDirective } from '../../directives/scroll-reveal.directive';
 
 @Component({
   selector: 'app-eligibility-page',
@@ -29,6 +30,7 @@ import { DegreeLevel, EligibilityData, EligibilityService, Intake, TestType } fr
     MatSlideToggleModule,
     MatAutocompleteModule,
     RouterLink,
+    ScrollRevealDirective,
   ],
   templateUrl: './eligibility.page.html',
   styleUrl: './eligibility.page.css',
