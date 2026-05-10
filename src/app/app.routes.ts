@@ -6,6 +6,7 @@ import { LoginPage } from './pages/auth/login.page';
 import { PricingPage } from './pages/pricing/pricing.page';
 import { SignupPage } from './pages/auth/signup.page';
 import { HomePage } from './pages/home/home.page';
+import { UniversitiesPage } from './pages/universities/universities.page';
 
 export const routes: Routes = [
 	{ path: '', component: HomePage },
@@ -13,6 +14,8 @@ export const routes: Routes = [
 	{ path: 'login', component: LoginPage },
 	{ path: 'signup', component: SignupPage },
 	{ path: 'pricing', component: PricingPage, canActivate: [authGuard] },
+	{ path: 'universities', component: UniversitiesPage },
+	{ path: 'universites', component: UniversitiesPage },
 	{ path: 'dashboard', component: DashboardPage, canActivate: [authGuard] },
 	{ path: '**', redirectTo: '' },
 ];

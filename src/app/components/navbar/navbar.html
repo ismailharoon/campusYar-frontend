@@ -1,5 +1,5 @@
 <!-- Navbar -->
-<header>
+<header class="nav-shell">
   <nav class="navbar" role="navigation" aria-label="Main Navigation" [class.scrolled]="isScrolled">
     <a class="nav-logo" routerLink="/" (click)="scrollToTop()">
       <div class="nav-icon" aria-hidden="true">
@@ -19,10 +19,37 @@
       <li><a href="#about" style="text-decoration: none; color: inherit">About</a></li>
       <li><a routerLink="/eligibility" routerLinkActive="active" style="text-decoration: none; color: inherit">Eligibility</a></li>
       <li><a routerLink="/pricing" routerLinkActive="active" style="text-decoration: none; color: inherit">Pricing</a></li>
+      <li>
+        <button class="guides-toggle" type="button" (click)="toggleGuides($event)" [attr.aria-expanded]="guidesOpen" aria-haspopup="true">
+          <span class="guides-icon" aria-hidden="true">&#9776;</span>
+          Guides
+          <span class="guides-chevron" aria-hidden="true">&#9662;</span>
+        </button>
+      </li>
     </ul>
     <div style="display: flex; gap: 12px; align-items: center;">
       <button class="btn-login" routerLink="/login">Login</button>
       <button class="btn-primary" routerLink="/signup">Get started free</button>
     </div>
   </nav>
+
+  <div class="guides-backdrop" *ngIf="guidesOpen" (click)="closeGuides()"></div>
+  <div class="guides-dropdown" *ngIf="guidesOpen" [@slideDown]>
+    <div class="guides-inner">
+      <div class="guides-header">
+        <span class="guides-title">Guides</span>
+        <button class="guides-close" type="button" (click)="closeGuides()" aria-label="Close Guides">&times;</button>
+      </div>
+      <div class="guides-list">
+        <button class="guides-row" type="button"><span>Study &amp; research in Germany</span><span class="guides-plus">+</span></button>
+        <a class="guides-row" routerLink="/universites" (click)="closeGuides()"><span>Universities &amp; Programmes</span><span class="guides-plus">+</span></a>
+        <button class="guides-row" type="button"><span>Scholarships &amp; Funding</span><span class="guides-plus">+</span></button>
+        <button class="guides-row" type="button"><span>Requirements &amp; Enrolment</span><span class="guides-plus">+</span></button>
+        <button class="guides-row" type="button"><span>Living in Germany</span><span class="guides-plus">+</span></button>
+        <button class="guides-row" type="button"><span>Work &amp; Career</span><span class="guides-plus">+</span></button>
+        <button class="guides-row" type="button"><span>PhD Studies &amp; Research</span><span class="guides-plus">+</span></button>
+        <button class="guides-row" type="button"><span>Advisory Service</span><span class="guides-plus">+</span></button>
+      </div>
+    </div>
+  </div>
 </header>
