@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, inject } from '@angular/core';
 import { animate, style, transition, trigger } from '@angular/animations';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-navbar',
@@ -21,6 +22,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   ]
 })
 export class Navbar {
+  private readonly authService = inject(AuthService);
   isScrolled = false;
   guidesOpen = false;
 
@@ -65,5 +67,14 @@ export class Navbar {
 
   closeGuides(): void {
     this.guidesOpen = false;
+  }
+
+  isLoggedIn(): boolean {
+    return this.authService.isLoggedIn();
+  }
+
+  logout(): void {
+    this.authService.logout();
+    this.closeGuides();
   }
 }

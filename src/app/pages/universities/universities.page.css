@@ -1,6 +1,6 @@
 .universities-shell {
   min-height: 100vh;
-  padding: 0 24px 80px;
+  padding: 40px 24px 80px;
   background: transparent;
 }
 
@@ -24,12 +24,10 @@
   max-width: 1100px;
   margin: 0 auto;
   padding: 28px;
-  border-radius: 20px;
-  border: 1px solid color-mix(in srgb, var(--wh) 40%, transparent);
-  background: color-mix(in srgb, var(--wh) 65%, transparent);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  box-shadow: inset 0 1px 0 color-mix(in srgb, var(--wh) 80%, transparent), 0 14px 30px color-mix(in srgb, var(--dk) 8%, transparent);
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+  background: #ffffff;
+  box-shadow: none;
 }
 
 .universities-search {
@@ -39,17 +37,17 @@
 .universities-input {
   width: 100%;
   padding: 14px 16px;
-  border-radius: 14px;
-  border: 1px solid color-mix(in srgb, var(--dk) 10%, transparent);
-  background: color-mix(in srgb, var(--wh) 75%, transparent);
+  border-radius: 6px;
+  border: 1px solid var(--color-border);
+  background: #ffffff;
   font: inherit;
   color: var(--dk);
 }
 
 .universities-input:focus {
   outline: none;
-  border-color: var(--o);
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--o) 18%, transparent);
+  border-color: var(--color-accent);
+  box-shadow: none;
 }
 
 .universities-filters {
@@ -73,17 +71,17 @@
 .filter-field select {
   width: 100%;
   padding: 12px 14px;
-  border-radius: 14px;
-  border: 1px solid color-mix(in srgb, var(--dk) 10%, transparent);
-  background: color-mix(in srgb, var(--wh) 75%, transparent);
+  border-radius: 6px;
+  border: 1px solid var(--color-border);
+  background: #ffffff;
   font: inherit;
   color: var(--dk);
 }
 
 .filter-field select:focus {
   outline: none;
-  border-color: var(--o);
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--o) 18%, transparent);
+  border-color: var(--color-accent);
+  box-shadow: none;
 }
 
 .filter-action {

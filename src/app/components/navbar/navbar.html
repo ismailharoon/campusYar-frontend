@@ -1,35 +1,44 @@
-<!-- Navbar -->
 <header class="nav-shell">
-  <nav class="navbar" role="navigation" aria-label="Main Navigation" [class.scrolled]="isScrolled">
-    <a class="nav-logo" routerLink="/" (click)="scrollToTop()">
-      <div class="nav-icon" aria-hidden="true">
-        <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
-          <circle cx="11" cy="8" r="4.5" fill="white" />
-          <path d="M3 18 Q11 13 19 18" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" />
-        </svg>
+  <nav role="navigation" aria-label="Main Navigation">
+    <div class="top-row">
+      <div class="wrap">
+        <a class="logo" routerLink="/" (click)="scrollToTop()" style="text-decoration: none;">
+          <div class="logo-mark">
+            <svg width="22" height="22" viewBox="0 0 22 22" fill="none" style="display: block;">
+              <circle cx="11" cy="8" r="4.5" fill="white" />
+              <path d="M3 18 Q11 13 19 18" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" />
+            </svg>
+          </div>
+          <span class="logo-name">CampusYar</span>
+        </a>
+        <div class="auth-buttons">
+          <ng-container *ngIf="!isLoggedIn(); else authenticated">
+            <a routerLink="/login" class="login-link">Log in</a>
+          </ng-container>
+          <ng-template #authenticated>
+            <div class="auth-logged-in">
+              <a routerLink="/dashboard" class="login-link">Dashboard</a>
+              <button (click)="logout()" class="logout-btn">Log out</button>
+            </div>
+          </ng-template>
+        </div>
       </div>
-      <span style="font-family: 'DM Sans', sans-serif; font-size: 22px; font-weight: 800; letter-spacing: 0.5px">
-        <span style="color: #ff6b2b">Campus</span><span style="color: #111111">Yar</span>
-      </span>
-    </a>
-    <ul class="nav-links" style="list-style: none; display: flex; gap: 20px">
-      <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" style="text-decoration: none; color: inherit">Home</a></li>
-      <li><a href="#how-it-works" style="text-decoration: none; color: inherit">How it works</a></li>
-      <li><a href="#features" style="text-decoration: none; color: inherit">Features</a></li>
-      <li><a href="#about" style="text-decoration: none; color: inherit">About</a></li>
-      <li><a routerLink="/eligibility" routerLinkActive="active" style="text-decoration: none; color: inherit">Eligibility</a></li>
-      <li><a routerLink="/pricing" routerLinkActive="active" style="text-decoration: none; color: inherit">Pricing</a></li>
-      <li>
-        <button class="guides-toggle" type="button" (click)="toggleGuides($event)" [attr.aria-expanded]="guidesOpen" aria-haspopup="true">
-          <span class="guides-icon" aria-hidden="true">&#9776;</span>
-          Guides
-          <span class="guides-chevron" aria-hidden="true">&#9662;</span>
-        </button>
-      </li>
-    </ul>
-    <div style="display: flex; gap: 12px; align-items: center;">
-      <button class="btn-login" routerLink="/login">Login</button>
-      <button class="btn-primary" routerLink="/signup">Get started free</button>
+    </div>
+    
+    <div class="nav-band">
+      <div class="wrap">
+        <div class="nav-links">
+          <a routerLink="/eligibility" routerLinkActive="active">Plan Your Studies</a>
+          <a routerLink="/universities" routerLinkActive="active">University Finder</a>
+          <a class="guides-toggle" href="javascript:void(0)" (click)="toggleGuides($event)" [attr.aria-expanded]="guidesOpen">
+            Pathways <span class="caret">▾</span>
+          </a>
+          <a href="#">Living in Germany</a>
+          <a href="#">Guides</a>
+          <a href="#">Checklist</a>
+        </div>
+        <div class="search-icon"></div>
+      </div>
     </div>
   </nav>
 
@@ -37,18 +46,18 @@
   <div class="guides-dropdown" *ngIf="guidesOpen" [@slideDown]>
     <div class="guides-inner">
       <div class="guides-header">
-        <span class="guides-title">Guides</span>
-        <button class="guides-close" type="button" (click)="closeGuides()" aria-label="Close Guides">&times;</button>
+        <span class="guides-title">Pathways</span>
+        <button class="guides-close" type="button" (click)="closeGuides()" aria-label="Close Dropdown">&times;</button>
       </div>
       <div class="guides-list">
-        <button class="guides-row" type="button"><span>Study &amp; research in Germany</span><span class="guides-plus">+</span></button>
-        <a class="guides-row" routerLink="/universites" (click)="closeGuides()"><span>Universities &amp; Programmes</span><span class="guides-plus">+</span></a>
-        <button class="guides-row" type="button"><span>Scholarships &amp; Funding</span><span class="guides-plus">+</span></button>
-        <button class="guides-row" type="button"><span>Requirements &amp; Enrolment</span><span class="guides-plus">+</span></button>
-        <button class="guides-row" type="button"><span>Living in Germany</span><span class="guides-plus">+</span></button>
-        <button class="guides-row" type="button"><span>Work &amp; Career</span><span class="guides-plus">+</span></button>
-        <button class="guides-row" type="button"><span>PhD Studies &amp; Research</span><span class="guides-plus">+</span></button>
-        <button class="guides-row" type="button"><span>Advisory Service</span><span class="guides-plus">+</span></button>
+        <a class="guides-row" href="#" (click)="closeGuides()"><span>Study &amp; research in Germany</span><span class="guides-plus">+</span></a>
+        <a class="guides-row" routerLink="/universities" (click)="closeGuides()"><span>Universities &amp; Programmes</span><span class="guides-plus">+</span></a>
+        <a class="guides-row" href="#" (click)="closeGuides()"><span>Scholarships &amp; Funding</span><span class="guides-plus">+</span></a>
+        <a class="guides-row" href="#" (click)="closeGuides()"><span>Requirements &amp; Enrolment</span><span class="guides-plus">+</span></a>
+        <a class="guides-row" href="#" (click)="closeGuides()"><span>Living in Germany</span><span class="guides-plus">+</span></a>
+        <a class="guides-row" href="#" (click)="closeGuides()"><span>Work &amp; Career</span><span class="guides-plus">+</span></a>
+        <a class="guides-row" href="#" (click)="closeGuides()"><span>PhD Studies &amp; Research</span><span class="guides-plus">+</span></a>
+        <a class="guides-row" href="#" (click)="closeGuides()"><span>Advisory Service</span><span class="guides-plus">+</span></a>
       </div>
     </div>
   </div>
