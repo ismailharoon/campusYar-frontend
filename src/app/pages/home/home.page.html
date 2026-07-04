@@ -1,253 +1,217 @@
-<!-- Hero Section -->
-<main >
-  <section class="hero">
-    <div class="hero-circle-right"></div>
-    <div class="hero-circle-left"></div>
-    <div style="display: flex; align-items: center; justify-content: space-between; gap: 40px; position: relative; z-index: 1">
-      <article class="hero-content" style="flex: 1; min-width: 300px; max-width: 560px">
+<main>
+  <div class="wrap" style="padding-top:20px;">
+    <section class="hero-banner">
+      <img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&w=1400&q=80" alt="Germany city architecture">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <div class="eyebrow">Pakistan → Germany, mapped out</div>
+        <h1>Find your <em>exact</em> path to Germany.</h1>
+        <p>Answer 7 quick questions. Get your real pathway, matching universities, and a document checklist — free, in under 3 minutes.</p>
+        <a routerLink="/signup" class="btn-primary-lg">Start Now</a>
+      </div>
+    </section>
+  </div>
+  
+  <div class="wrap">
+    <div class="stat-strip">
+      <div class="stat-item"><div class="num">5</div><div class="label">Pathways covered</div></div>
+      <div class="stat-item"><div class="num">400+</div><div class="label">DAAD programs indexed</div></div>
+      <div class="stat-item"><div class="num">0</div><div class="label">Consultant fees</div></div>
+      <div class="stat-item"><div class="num">3 min</div><div class="label">To your pathway</div></div>
+    </div>
+  </div>
 
+  <section class="section" style="padding-bottom:20px;">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">The Problem</div>
+        <h2>Ten tabs open. Still no idea what to do.</h2>
+      </div>
 
-        <!-- CRITICAL SEO: Only one H1 per page -->
-        <h1 style="display: contents">
-          <div class="hero-heading">
-            <div class="heading-dark">STUDY IN</div>
-            <div class="heading-orange">GERMANY</div>
-            <div class="heading-dark">THE RIGHT</div>
-            <div class="heading-row">
-              <span class="heading-dark">WAY.</span>
-              <span class="hero-sub"
-                >No consultant fees. No hidden agendas. Honest AI powered guidance for Pakistani students based on your actual
-                profile.</span
-              >
-            </div>
+      <div class="feature-row">
+        <div class="feature-img">
+          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80" alt="Student researching on laptop">
+          <div class="feature-tag"><span class="dotc"></span>Real confusion, every intake</div>
+        </div>
+        <div class="feature-text">
+          <span class="eyebrow">No starting point</span>
+          <h3>You don't even know where you fit.</h3>
+          <p>Eligibility, pathway, timeline — most students discover the real requirements only after weeks of scattered searching.</p>
+          <ul class="feature-list">
+            <li>Whether you qualify for a direct Bachelor's or Master's</li>
+            <li>What to do if you don't meet requirements yet</li>
+            <li>Realistic cost and timeline for your specific case</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="feature-row reverse">
+        <div class="feature-img">
+          <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=800&q=80" alt="Documents and passport flatlay">
+          <div class="feature-tag"><span class="dotc"></span>Discovered too late</div>
+        </div>
+        <div class="feature-text">
+          <span class="eyebrow">Hidden details</span>
+          <h3>The costs nobody warns you about.</h3>
+          <p>Blocked account, APS certificate, UniAssist fees — critical requirements that surface only after you've already committed time and money.</p>
+          <ul class="feature-list">
+            <li>€11,904 blocked account — and when you can skip it</li>
+            <li>APS certificate: 4-8 weeks, Islamabad only</li>
+            <li>Application deadlines most students miss entirely</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:20px;">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">What CampusYar Does</div>
+        <h2>One thing, done properly.</h2>
+      </div>
+      <div class="pillars-grid">
+        <div class="pillar-card">
+          <div class="pillar-photo"><div class="pillar-num">01</div><img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=500&q=80" alt="Pathway finder"></div>
+          <div class="pillar-body">
+            <h3>Pathway Finder</h3>
+            <p>A guided conversation that finds your exact route — not a generic form.</p>
+            <a routerLink="/eligibility" class="pillar-link">Try it →</a>
           </div>
-        </h1>
-
-        <div class="hero-btns">
-          <button class="btn-primary btn-lg" aria-label="Check Eligibility Now" routerLink="/eligibility">Check my eligibility →</button>
-          <button class="btn-outline btn-lg">See how it works</button>
         </div>
-        <p class="hero-note">Free to start · No credit card needed</p>
-      </article>
-
-      <!-- Illustration (Simplified for Bots) -->
-      <aside style="flex: 1; min-width: 400px; display: flex; justify-content: center; align-items: center" aria-hidden="true">
-        <svg width="560" height="500" viewBox="0 0 420 380" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="210" cy="190" r="170" fill="#FFF0E8" opacity="0.8" />
-          <circle cx="210" cy="190" r="130" fill="#FFE8D6" opacity="0.5" />
-          <rect x="100" y="220" width="220" height="12" rx="6" fill="#CC4A10" />
-          <rect x="115" y="130" width="190" height="95" rx="8" fill="#111111" />
-          <rect x="123" y="138" width="174" height="80" rx="4" fill="#1a1a2e" />
-          <rect x="130" y="145" width="160" height="8" rx="2" fill="#FF6B2B" opacity="0.8" />
-          <rect x="130" y="158" width="100" height="4" rx="2" fill="white" opacity="0.3" />
-          <rect x="130" y="166" width="130" height="4" rx="2" fill="white" opacity="0.2" />
-          <rect x="130" y="174" width="80" height="4" rx="2" fill="white" opacity="0.2" />
-          <rect x="130" y="182" width="110" height="4" rx="2" fill="#FF6B2B" opacity="0.4" />
-          <rect x="130" y="190" width="90" height="4" rx="2" fill="white" opacity="0.2" />
-          <rect x="130" y="198" width="60" height="10" rx="3" fill="#FF6B2B" />
-          <circle cx="210" cy="95" r="28" fill="#F4A261" />
-          <ellipse cx="210" cy="74" rx="28" ry="14" fill="#2D1B00" />
-          <rect x="182" y="74" width="56" height="10" rx="2" fill="#2D1B00" />
-          <rect x="175" y="120" width="70" height="55" rx="10" fill="#FF6B2B" />
-          <rect x="148" y="125" width="30" height="12" rx="6" fill="#F4A261" />
-          <rect x="242" y="125" width="30" height="12" rx="6" fill="#F4A261" />
-          <path d="M195 120 L210 135 L225 120" stroke="white" stroke-width="2" fill="none" />
-          <rect x="290" y="100" width="80" height="50" rx="10" fill="white" opacity="0.95" />
-          <rect x="295" y="108" width="70" height="10" rx="2" fill="#111" />
-          <rect x="295" y="120" width="70" height="10" rx="2" fill="#CC0000" />
-          <rect x="295" y="132" width="70" height="10" rx="2" fill="#FFCE00" />
-          <circle cx="80" cy="150" r="28" fill="#FF6B2B" />
-          <path d="M68 150 L76 158 L92 142" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
-          <text x="320" y="85" font-size="16" fill="#FF6B2B">★</text>
-          <text x="60" y="250" font-size="12" fill="#FF6B2B" opacity="0.6">★</text>
-          <text x="350" y="200" font-size="10" fill="#FF6B2B" opacity="0.4">★</text>
-          <rect x="55" y="180" width="55" height="65" rx="6" fill="white" opacity="0.9" />
-          <rect x="62" y="190" width="40" height="4" rx="2" fill="#E8E8E8" />
-          <rect x="62" y="198" width="35" height="4" rx="2" fill="#E8E8E8" />
-          <rect x="62" y="206" width="40" height="4" rx="2" fill="#FF6B2B" opacity="0.5" />
-          <rect x="62" y="214" width="30" height="4" rx="2" fill="#E8E8E8" />
-          <rect x="62" y="222" width="20" height="8" rx="3" fill="#FF6B2B" />
-          <rect x="310" y="240" width="70" height="55" rx="8" fill="white" opacity="0.9" />
-          <circle cx="345" cy="262" r="14" fill="none" stroke="#FF6B2B" stroke-width="2" stroke-dasharray="3 2" />
-          <text x="337" y="267" font-size="10" fill="#FF6B2B" font-weight="bold">VISA</text>
-          <rect x="318" y="280" width="54" height="4" rx="2" fill="#E8E8E8" />
-          <rect x="318" y="288" width="40" height="4" rx="2" fill="#E8E8E8" />
-          <circle cx="160" cy="310" r="4" fill="#FF6B2B" opacity="0.3" />
-          <circle cx="175" cy="310" r="4" fill="#FF6B2B" opacity="0.5" />
-          <circle cx="190" cy="310" r="4" fill="#FF6B2B" opacity="0.7" />
-          <circle cx="205" cy="310" r="4" fill="#FF6B2B" />
-          <circle cx="220" cy="310" r="4" fill="#FF6B2B" opacity="0.7" />
-          <circle cx="235" cy="310" r="4" fill="#FF6B2B" opacity="0.5" />
-          <circle cx="250" cy="310" r="4" fill="#FF6B2B" opacity="0.3" />
-        </svg>
-      </aside>
-    </div>
-  </section>
-
-  <!-- Stats Bar -->
-  <section class="stats-bar" aria-label="Key Features Statistics">
-    <div class="stat">
-      <div class="stat-num">FREE</div>
-      <p class="stat-label">To start</p>
-    </div>
-    <div class="stat-divider"></div>
-    <div class="stat">
-      <div class="stat-num">0%</div>
-      <p class="stat-label">University commission</p>
-    </div>
-    <div class="stat-divider"></div>
-    <div class="stat">
-      <div class="stat-num">100%</div>
-      <p class="stat-label">Honest guidance</p>
-    </div>
-    <div class="stat-divider"></div>
-    <div class="stat">
-      <div class="stat-num">AI</div>
-      <p class="stat-label">Facts based</p>
-    </div>
-  </section>
-
-  <section class="data-proof-section">
-    <div class="data-proof-inner">
-      <h2 class="heading-dark-sm">POWERED BY <span class="heading-orange-sm">OFFICIAL DATA</span></h2>
-      <p class="data-proof-sub">We don't guess. We sync with the latest German university requirements.</p>
-      
-      <div class="data-proof-grid">
-        <div class="data-card">
-          <div class="data-metric">20,000+</div>
-          <h4 class="data-title">International Programs</h4>
-          <p class="data-copy">From Engineering to Arts, fully synced with DAAD databases.</p>
+        <div class="pillar-card">
+          <div class="pillar-photo"><div class="pillar-num">02</div><img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=500&q=80" alt="University finder"></div>
+          <div class="pillar-body">
+            <h3>University Finder</h3>
+            <p>DAAD's full database, filtered for Pakistani students.</p>
+            <a routerLink="/universities" class="pillar-link">Search unis →</a>
+          </div>
         </div>
-        <div class="data-card">
-          <div class="data-metric">350+</div>
-          <h4 class="data-title">Public Universities</h4>
-          <p class="data-copy">Access to tuition-free education across every German state.</p>
+        <div class="pillar-card">
+          <div class="pillar-photo"><div class="pillar-num">03</div><img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?auto=format&fit=crop&w=500&q=80" alt="Knowledge hub"></div>
+          <div class="pillar-body">
+            <h3>Knowledge Hub</h3>
+            <p>Every guide you need — verified and dated, in one place.</p>
+            <a href="#" class="pillar-link">Read guides →</a>
+          </div>
         </div>
-        <div class="data-card">
-          <div class="data-metric">VPD</div>
-          <h4 class="data-title">German Grade Scale</h4>
-          <p class="data-copy">Official Bavarian Formula calculation for Pakistani CGPA.</p>
+        <div class="pillar-card">
+          <div class="pillar-photo"><div class="pillar-num">04</div><img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=500&q=80" alt="Checklist generator"></div>
+          <div class="pillar-body">
+            <h3>Checklist Generator</h3>
+            <p>Your personal document list, built from your actual pathway.</p>
+            <a href="#" class="pillar-link">Get checklist →</a>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- How It Works -->
-  <section id="how-it-works" class="how-section">
-    <div class="section-heading" appScrollReveal>
-      <h2 class="heading-dark-sm">HOW <span class="heading-orange-sm">IT WORKS</span></h2>
-      <div class="heading-line"></div>
-    </div>
-    <div class="steps-grid">
-      <div class="step-card" appScrollReveal>
-        <span class="step-num">01</span>
-        <div class="step-bar"></div>
-        <h3>Enter your profile</h3>
-        <p>CGPA, degree, IELTS, and budget all in one place for a precise check.</p>
+  <section class="section" style="padding-top:0;">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">How It Works</div>
+        <h2>Four steps. Ten minutes. Done.</h2>
       </div>
-      <div class="step-card" appScrollReveal>
-        <span class="step-num">02</span>
-        <div class="step-bar"></div>
-        <h3>Honest eligibility check</h3>
-        <p>We flag weak areas in your profile instead of hiding them just to push applications.</p>
-      </div>
-      <div class="step-card" appScrollReveal>
-        <span class="step-num">03</span>
-        <div class="step-bar"></div>
-        <h3>Shortlist universities</h3>
-        <p>Filtered by your profile, budget, and specific field of study in Germany.</p>
-      </div>
-      <div class="step-card" appScrollReveal>
-        <span class="step-num">04</span>
-        <div class="step-bar"></div>
-        <h3>AI document prep</h3>
-        <p>Automatic SOP generator and full checklists tailored to your selected university.</p>
-      </div>
-      <div class="step-card step-card-orange" appScrollReveal>
-        <span class="step-num step-num-white">05</span>
-        <div class="step-bar step-bar-white"></div>
-        <h3 class="white">Visa roadmap</h3>
-        <p class="white-muted">Step-by-step guide for appointments, blocked accounts, and document filing.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Why CampusYar -->
-  <section id="features" class="why-section">
-    <div class="why-left">
-      <h2 class="why-heading">WHY<br /><span class="heading-orange">CAMPUS</span><br />YAR?</h2>
-    </div>
-    <div class="why-right">
-      <div class="why-item" appScrollReveal>
-        <div class="why-icon" aria-hidden="true">
-          <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
-            <path d="M4 11l5 5 9-9" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
-          </svg>
+      <div class="steps-strip">
+        <div class="step-card">
+          <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=500&q=80" alt="Step 1">
+          <div class="step-card-content">
+            <div class="step-badge">01</div>
+            <h4>Answer 7 questions</h4>
+            <p>About your education and readiness</p>
+          </div>
         </div>
-        <div>
-          <h4>Zero conflict of interest</h4>
-          <p>We don't earn from universities. Our only goal is your success in Germany.</p>
+        <div class="step-card">
+          <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=500&q=80" alt="Step 2">
+          <div class="step-card-content">
+            <div class="step-badge">02</div>
+            <h4>Get your pathway</h4>
+            <p>A clear route with a real timeline</p>
+          </div>
         </div>
-      </div>
-      <div class="why-item" appScrollReveal>
-        <div class="why-icon" aria-hidden="true">
-          <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
-            <path d="M4 11l5 5 9-9" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
-          </svg>
+        <div class="step-card">
+          <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=500&q=80" alt="Step 3">
+          <div class="step-card-content">
+            <div class="step-badge">03</div>
+            <h4>Find matching unis</h4>
+            <p>Pre-filtered by pathway and budget</p>
+          </div>
         </div>
-        <div>
-          <h4>Profile-first approach</h4>
-          <p>We check your actual eligibility before encouraging you to apply for any program.</p>
-        </div>
-      </div>
-      <div class="why-item" appScrollReveal>
-        <div class="why-icon" aria-hidden="true">
-          <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
-            <path d="M4 11l5 5 9-9" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
-          </svg>
-        </div>
-        <div>
-          <h4>Born from Personal Experience</h4>
-          <p>We’ve been in your shoes. Our mission is to protect students from the misinformation of high fee consultants.</p>
+        <div class="step-card">
+          <img src="https://images.unsplash.com/photo-1568667256549-094345857637?auto=format&fit=crop&w=500&q=80" alt="Step 4">
+          <div class="step-card-content">
+            <div class="step-badge">04</div>
+            <h4>Download checklist</h4>
+            <p>Nothing surprises you later</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="comparison-section">
-    <div class="comparison-inner">
-      <h2 class="heading-dark-sm">STOP WASTING <span class="heading-orange-sm">MONEY</span></h2>
-      <p class="comparison-sub">How CampusYar protects you compared to traditional agents.</p>
+  <div class="trust-band">
+    <div class="wrap">
+      <div class="avatar-cluster">
+        <img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?auto=format&fit=crop&w=200&q=80" alt="Student">
+        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80" alt="Student">
+        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80" alt="Student">
+      </div>
+      <div class="trust-quote">"Sab se pehli baar lagaa <span>kisi ne mera confusion samjha</span> — bina kuch beche hue." — built for students planning Winter '26 & Summer '27 intakes</div>
+    </div>
+  </div>
 
-      <div class="comparison-grid">
-        <div class="comparison-card comparison-card--legacy">
-          <h4 class="comparison-title">Traditional Consultants</h4>
-          <ul class="comparison-list">
-            <li><span class="comparison-tag comparison-tag--bad">Cost</span> 2-5 Lakh PKR upfront or per application</li>
-            <li><span class="comparison-tag comparison-tag--bad">Bias</span> Incentives to push private universities</li>
-            <li><span class="comparison-tag comparison-tag--bad">Clarity</span> Requirements revealed late in the process</li>
-            <li><span class="comparison-tag comparison-tag--bad">Speed</span> Manual workflows and slow updates</li>
-          </ul>
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Knowledge Hub</div>
+        <h2>The guides consultants charge for.</h2>
+      </div>
+      <div class="guides-grid">
+        <div class="guide-card">
+          <div class="guide-photo"><img src="https://images.unsplash.com/photo-1568667256549-094345857637?auto=format&fit=crop&w=400&q=80" alt="APS guide"></div>
+          <div class="guide-card-body">
+            <h3>APS Certificate Guide</h3>
+            <p>What it is, cost, timeline, and exactly what to submit.</p>
+            <div class="verified-tag"><span class="dotc"></span>Verified Jun 2026</div>
+          </div>
         </div>
-        <div class="comparison-card comparison-card--ai">
-          <h4 class="comparison-title comparison-title--accent">CampusYar (AI Expert)</h4>
-          <ul class="comparison-list">
-            <li><span class="comparison-tag">Cost</span> 0 PKR to start, pay only when you choose</li>
-            <li><span class="comparison-tag">Focus</span> Public universities and tuition free options</li>
-            <li><span class="comparison-tag">Clarity</span> 100% transparent requirements and checklists</li>
-            <li><span class="comparison-tag">Speed</span> Instant AI-powered eligibility results</li>
-          </ul>
+        <div class="guide-card">
+          <div class="guide-photo"><img src="https://images.unsplash.com/photo-1554224154-26032ffc0d07?auto=format&fit=crop&w=400&q=80" alt="Blocked account guide"></div>
+          <div class="guide-card-body">
+            <h3>Blocked Account</h3>
+            <p>Fintiba vs Coracle compared — and when you can skip it.</p>
+            <div class="verified-tag"><span class="dotc"></span>Verified Jun 2026</div>
+          </div>
+        </div>
+        <div class="guide-card">
+          <div class="guide-photo"><img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=400&q=80" alt="UniAssist guide"></div>
+          <div class="guide-card-body">
+            <h3>UniAssist Explained</h3>
+            <p>Which universities need it, fees, and full submission flow.</p>
+            <div class="verified-tag"><span class="dotc"></span>Verified Jun 2026</div>
+          </div>
+        </div>
+        <div class="guide-card">
+          <div class="guide-photo"><img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=400&q=80" alt="Visa guide"></div>
+          <div class="guide-card-body">
+            <h3>Visa Process</h3>
+            <p>Embassy appointment, documents, what to expect.</p>
+            <div class="verified-tag"><span class="dotc"></span>Verified Jun 2026</div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-
-
-  <!-- CTA Section -->
-  <section class="cta-section" appScrollReveal>
-    <h2 class="cta-heading">START FOR <span class="heading-orange">FREE TODAY</span></h2>
-    <p class="cta-sub">Join thousands of students applying to Germany with honest guidance. No hidden agendas.</p>
-    <button class="btn-primary btn-xl" routerLink="/eligibility">Check my eligibility now →</button>
+  <section class="section">
+    <div class="final-banner">
+      <img src="https://images.unsplash.com/photo-1560969184-10fe8719e047?auto=format&fit=crop&w=1400&q=80" alt="Germany campus">
+      <div class="final-overlay">
+        <h2>Stop guessing. Start your pathway.</h2>
+        <p>Free, takes 3 minutes, no signup required to see your result.</p>
+        <a routerLink="/eligibility" class="btn-primary-lg">Find My Germany Path →</a>
+      </div>
+    </div>
   </section>
 </main>
