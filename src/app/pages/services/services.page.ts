@@ -50,7 +50,7 @@ export class ServicesPage implements OnInit, AfterViewInit {
       icon: 'cap',
       tag: 'build',
       title: 'University Finder',
-      desc: "DAAD's full database, filtered for Pakistani students — with APS and recognition notes attached to help you apply directly.",
+      desc: "Official university program database, filtered for Pakistani students — with APS and recognition notes attached to help you apply directly.",
       link: 'Search Universities',
       routerLink: '/universities',
       image: 'assets/step2.png',
@@ -116,17 +116,21 @@ export class ServicesPage implements OnInit, AfterViewInit {
 
   readonly buildFeatures: SplitFeature[] = [
     { title: 'Pathway Finder', desc: 'Your route, mapped in one sitting' },
-    { title: 'University Finder', desc: 'DAAD data, filtered for you' },
-    { title: 'Checklist Generator', desc: 'Every document, one list' },
+    { title: 'University Finder', desc: 'Program listings, filtered for you' },
+    { title: 'Checklist Generator', desc: 'Every document, one personalized checklist' },
+    { title: 'APS Certificate Guide', desc: ' Islamabad verification guidebook' },
+    { title: 'Blocked Account Guide', desc: 'Setup walkthrough and provider lists' },
+    { title: 'UniAssist Guide', desc: 'Portal navigation and tips' },
+    { title: 'Visa Process Guide', desc: 'Embassy guidelines and interview prep' },
     { title: 'SOP / LOR / CV templates', desc: 'Structures that match what admissions expect' },
-    { title: 'APS & Visa guides', desc: 'Islamabad and the embassy, demystified' },
+    { title: 'Pre-departure & Arrival Guide', desc: 'Accommodation, Anmeldung, SIM & bank details' },
   ];
 
   readonly curateFeatures: SplitFeature[] = [
-    { title: 'IELTS prep', desc: 'Free videos, apps, and mock tests worth your time' },
-    { title: 'TestDaF prep', desc: 'The channels that actually help' },
-    { title: 'German A1–B2 courses', desc: 'Free options, ranked by outcome' },
-    { title: 'Scholarships', desc: "Beyond DAAD's own shortlist" },
+    { title: 'IELTS preparation', desc: 'Books, YouTube courses, and mock test shortlists' },
+    { title: 'TestDaF preparation', desc: 'Curated channels, materials, and practice exams' },
+    { title: 'German Language (A1→B2)', desc: "DW free courses, apps, and worksheets" },
+    { title: 'Scholarship Resources', desc: 'Funding sources outside official tracks' },
   ];
 
   readonly faqs: Faq[] = [
@@ -147,13 +151,12 @@ export class ServicesPage implements OnInit, AfterViewInit {
     },
     {
       q: 'Can I trust the information on CampusYar?',
-      a: 'Every guide is sourced from official channels — DAAD, APS Pakistan, the German Embassy — and shows the date it was last checked.',
+      a: 'Every guide is sourced from official channels — German university databases, APS Pakistan, the German Embassy — and shows the date it was last checked.',
       open: false,
     },
   ];
 
   ngOnInit(): void {
-    // Render stamps immediately to prevent failing viewport detection issues
     this.stampsLoaded = true;
   }
 

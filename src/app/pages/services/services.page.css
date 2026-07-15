@@ -523,6 +523,68 @@ h1, h2, h3 {
   background: #FFFDF7;
 }
 
+/* Badge colors - Block 3 (Bureaucracy & Documents) */
+.rich-badge.sop-approved {
+  top: 8%;
+  left: 0%;
+  color: var(--navy);
+  border-color: var(--border);
+  background: #FFFDF7;
+}
+.rich-badge.sop-approved .badge-dot {
+  background: var(--navy);
+}
+
+.rich-badge.cv-ready {
+  top: 22%;
+  left: 20%;
+  color: #3E6B4E;
+  border-color: #E7EFE9;
+  background: #FFFDF7;
+}
+.rich-badge.cv-ready svg {
+  stroke: #3E6B4E;
+}
+
+.rich-badge.aps-status {
+  top: 28%;
+  right: -2%;
+  color: var(--gold);
+  border-color: #F1E4C6;
+  background: #FFFDF7;
+}
+
+/* Badge colors - Block 4 (Visa & Arrival) */
+.rich-badge.visa-approved {
+  top: 8%;
+  left: 0%;
+  color: #3E6B4E;
+  border-color: #E7EFE9;
+  background: #FFFDF7;
+}
+.rich-badge.visa-approved .badge-dot {
+  background: #3E9160;
+}
+
+.rich-badge.anmeldung {
+  top: 22%;
+  left: 20%;
+  color: var(--accent-dark);
+  border-color: var(--accent-soft);
+  background: #FFFDF7;
+}
+.rich-badge.anmeldung svg {
+  stroke: var(--accent-dark);
+}
+
+.rich-badge.housing {
+  top: 28%;
+  right: -2%;
+  color: var(--gold);
+  border-color: #F1E4C6;
+  background: #FFFDF7;
+}
+
 /* Rich Cards */
 .rich-card {
   position: absolute;
@@ -592,39 +654,60 @@ h1, h2, h3 {
   stroke: var(--gold);
 }
 
+/* Card positioning - Block 3 (Bureaucracy) */
+.rich-card.block-acc {
+  bottom: 12%;
+  left: -2%;
+}
+.rich-card.block-acc .rc-icon {
+  stroke: var(--accent);
+}
+
+.rich-card.assist-fee {
+  bottom: -4%;
+  left: 22%;
+}
+.rich-card.assist-fee .rc-icon {
+  stroke: var(--gold);
+}
+
+/* Card positioning - Block 4 (Visa) */
+.rich-card.german-sim {
+  bottom: 12%;
+  left: -2%;
+}
+.rich-card.german-sim .rc-icon {
+  stroke: var(--accent);
+}
+
+.rich-card.bank-acc {
+  bottom: -4%;
+  left: 22%;
+}
+.rich-card.bank-acc .rc-icon {
+  stroke: var(--gold);
+}
+
 /* Bottom Vector illustrations */
 .rich-illustration {
   position: absolute;
   z-index: 8;
-}
-
-.rich-illustration.uni-dome {
-  bottom: 2%;
-  right: 14%;
   width: 90px;
   height: 90px;
   color: var(--gold);
 }
-.rich-illustration.uni-dome svg {
+
+.rich-illustration svg {
   width: 100%;
   height: 100%;
   fill: var(--gold-soft);
   stroke: var(--gold);
 }
 
-.rich-illustration.check-seal {
-  bottom: 2%;
-  right: 14%;
-  width: 90px;
-  height: 90px;
-  color: var(--gold);
-}
-.rich-illustration.check-seal svg {
-  width: 100%;
-  height: 100%;
-  fill: var(--gold-soft);
-  stroke: var(--gold);
-}
+.rich-illustration.uni-dome { bottom: 2%; right: 14%; }
+.rich-illustration.check-seal { bottom: 2%; right: 14%; }
+.rich-illustration.compass-seal { bottom: 2%; right: 14%; }
+.rich-illustration.arrival-seal { bottom: 2%; right: 14%; }
 
 /* ============ STAMP TRAIL ============ */
 .trail-section {
@@ -682,7 +765,6 @@ h1, h2, h3 {
   color: var(--ink);
   position: relative;
   flex-shrink: 0;
-  /* Make stamps always visible by default and trigger slide stampIn */
   opacity: 1;
   transform: rotate(var(--rot, 0deg));
   transition: transform .18s ease, box-shadow .18s ease, background .18s ease, color .18s ease, border-color .18s ease;
@@ -1290,7 +1372,7 @@ h1, h2, h3 {
     padding: 4px 10px;
     font-size: 10px;
   }
-  .rich-illustration.uni-dome, .rich-illustration.check-seal {
+  .rich-illustration.uni-dome, .rich-illustration.check-seal, .rich-illustration.compass-seal, .rich-illustration.arrival-seal {
     width: 70px;
     height: 70px;
     right: 18%;
