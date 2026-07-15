@@ -84,30 +84,72 @@
     </div>
 
     <div class="feature-row">
-      <div class="f-visual">
-        <div class="visual-card">
-          <svg viewBox="0 0 320 220" xmlns="http://www.w3.org/2000/svg">
-            <rect x="10" y="10" width="300" height="200" rx="10" fill="var(--paper)"/>
-            <rect x="30" y="34" width="180" height="14" rx="4" fill="var(--border)"/>
-            <rect x="30" y="58" width="120" height="10" rx="4" fill="var(--border)"/>
-            <rect x="30" y="90" width="260" height="1.5" fill="var(--border)"/>
-            <circle cx="42" cy="112" r="9" fill="#3E9160"/>
-            <path d="M38 112 L41 115 L47 108" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-            <rect x="60" y="106" width="150" height="12" rx="3" fill="var(--border)"/>
-            <circle cx="42" cy="142" r="9" fill="var(--gold)"/>
-            <text x="42" y="146" text-anchor="middle" fill="#fff" font-family="Poppins" font-weight="800" font-size="10">!</text>
-            <rect x="60" y="136" width="190" height="12" rx="3" fill="var(--border)"/>
-            <circle cx="42" cy="172" r="9" fill="none" stroke="var(--accent)" stroke-width="2"/>
-            <rect x="60" y="166" width="130" height="12" rx="3" fill="var(--border)"/>
+      <div class="f-visual-rich">
+        <!-- Backdrop Circle -->
+        <div class="visual-circle-bg"></div>
+
+        <!-- Main student image -->
+        <div class="main-photo-wrap">
+          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=400&q=80" alt="Student on laptop" class="main-photo">
+        </div>
+
+        <!-- Floating Badges -->
+        <div class="rich-badge caution">
+          <span class="badge-dot"></span>
+          Caution
+        </div>
+        
+        <div class="rich-badge on-track">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="badge-icon">
+            <path d="M20 6L9 17l-5-5"/>
           </svg>
+          On track
         </div>
-        <div class="f-tag" style="top:-14px; left:24px;">
-          <svg viewBox="0 0 24 24" fill="none" stroke="#3E9160" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
-          APS — Done
+
+        <div class="rich-badge critical">
+          <span class="badge-dot"></span>
+          Critical
         </div>
-        <div class="f-tag" style="bottom:-16px; right:16px;">
-          <svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
-          Visa — Due in 12 days
+
+        <div class="rich-badge passport">
+          <span class="badge-icon">🛂</span>
+          Passport
+        </div>
+
+        <div class="rich-badge file-v1">
+          <span class="badge-icon">📄</span>
+          v1
+        </div>
+
+        <!-- Floating Information Cards -->
+        <div class="rich-card overdue">
+          <div class="rc-label">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="rc-icon">
+              <path d="M20 6L9 17l-5-5"/>
+            </svg>
+            Tasks overdue
+          </div>
+          <div class="rc-val">12</div>
+        </div>
+
+        <div class="rich-card outstanding">
+          <div class="rc-label">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="rc-icon">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/>
+            </svg>
+            Outstanding docs
+          </div>
+          <div class="rc-val">35</div>
+        </div>
+
+        <!-- Vector icons at bottom -->
+        <div class="rich-illustration uni-dome">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 20v-2a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v2"/>
+            <path d="M6 16V9a6 6 0 0 1 12 0v7"/>
+            <circle cx="12" cy="3" r="1"/>
+          </svg>
         </div>
       </div>
       <div class="f-text">
