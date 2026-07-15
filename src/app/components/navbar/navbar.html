@@ -22,6 +22,19 @@
             </div>
           </ng-template>
         </div>
+        
+        <!-- Hamburger Button -->
+        <button class="mobile-menu-btn" (click)="toggleMobileMenu()" [attr.aria-expanded]="mobileMenuOpen" aria-label="Toggle Navigation Menu">
+          <svg *ngIf="!mobileMenuOpen" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+          <svg *ngIf="mobileMenuOpen" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
       </div>
     </div>
     
@@ -60,5 +73,24 @@
         <a class="guides-row" href="#" (click)="closeGuides()"><span>Advisory Service</span><span class="guides-plus">+</span></a>
       </div>
     </div>
+  </div>
+
+  <!-- Mobile menu dropdown -->
+  <div class="mobile-menu" *ngIf="mobileMenuOpen">
+    <a routerLink="/eligibility" routerLinkActive="active" (click)="closeMobileMenu()">Plan Your Studies</a>
+    <a routerLink="/universities" routerLinkActive="active" (click)="closeMobileMenu()">University Finder</a>
+    <a routerLink="/services" routerLinkActive="active" (click)="closeMobileMenu()">Services</a>
+    <a href="javascript:void(0)" (click)="toggleGuides($event); closeMobileMenu()">Pathways ▾</a>
+    <a href="#" (click)="closeMobileMenu()">Guides</a>
+    <a href="#" (click)="closeMobileMenu()">Checklist</a>
+    <hr class="mobile-menu-divider" />
+    <ng-container *ngIf="!isLoggedIn(); else mobileAuth">
+      <a routerLink="/login" class="mobile-auth-link" (click)="closeMobileMenu()">Log in</a>
+      <a routerLink="/signup" class="mobile-auth-link signup-highlight" (click)="closeMobileMenu()">Start Now</a>
+    </ng-container>
+    <ng-template #mobileAuth>
+      <a routerLink="/dashboard" class="mobile-auth-link" (click)="closeMobileMenu()">Dashboard</a>
+      <a href="javascript:void(0)" class="mobile-auth-link" (click)="logout(); closeMobileMenu()">Log out</a>
+    </ng-template>
   </div>
 </header>

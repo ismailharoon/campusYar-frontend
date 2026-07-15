@@ -271,9 +271,33 @@
   font-weight: 700;
 }
 
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--dk, #28241F);
+  padding: 8px;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.15s ease;
+}
+
+.mobile-menu-btn:hover {
+  color: var(--o, #E8712A);
+}
+
 @media(max-width: 900px) {
   .nav-links {
     display: none;
+  }
+
+  .nav-band {
+    display: none;
+  }
+  
+  .mobile-menu-btn {
+    display: flex;
   }
   
   .guides-list {
@@ -283,4 +307,78 @@
   .logo-text .l2 {
     font-size: 18px;
   }
+
+  /* Mobile menu dropdown */
+  .mobile-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+    border-bottom: 1px solid var(--border, #EDE7DE);
+    padding: 16px 32px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    z-index: 100;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+  }
+
+  .mobile-menu a {
+    font-family: var(--font-heading, 'Poppins', sans-serif);
+    font-weight: 700;
+    font-size: 14.5px;
+    text-transform: uppercase;
+    color: var(--dk, #28241F);
+    padding: 10px 0;
+    text-decoration: none;
+    display: block;
+    border-bottom: 1px solid color-mix(in srgb, var(--border, #EDE7DE) 40%, transparent);
+    transition: color 0.15s ease;
+  }
+
+  .mobile-menu a:last-child {
+    border-bottom: none;
+  }
+
+  .mobile-menu a:hover, .mobile-menu a.active {
+    color: var(--o, #E8712A);
+  }
+
+  .mobile-menu-divider {
+    border: none;
+    border-top: 1px solid var(--border, #EDE7DE);
+    margin: 12px 0 4px;
+  }
+
+  .mobile-menu .mobile-auth-link {
+    font-family: var(--font-heading, 'Poppins', sans-serif);
+    font-weight: 700;
+    text-align: center;
+    border-radius: 6px;
+    padding: 12px;
+    text-transform: none;
+  }
+
+  .mobile-menu .signup-highlight {
+    background: var(--o, #E8712A);
+    color: #ffffff !important;
+    border-bottom: none;
+    margin-top: 4px;
+  }
+
+  .mobile-menu .signup-highlight:hover {
+    background: var(--od, #C85A1B);
+  }
 }
+
+@media(max-width: 600px) {
+  .top-row .auth-buttons {
+    display: none;
+  }
+  
+  .mobile-menu {
+    padding: 16px 20px 24px;
+  }
+}
+

@@ -512,3 +512,15 @@ img {
     text-align: center;
   }
 }
+
+@media(max-width: 600px) {
+  .pillars-grid, .steps-strip, .guides-grid {
+    grid-template-columns: 1fr;
+  }
+  .hero-banner {
+    height: 440px;
+  }
+  .hero-content h1 {
+    font-size: 28px;
+  }
+}

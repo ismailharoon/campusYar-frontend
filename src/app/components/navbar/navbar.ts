@@ -25,13 +25,23 @@ export class Navbar {
   private readonly authService = inject(AuthService);
   isScrolled = false;
   guidesOpen = false;
+  mobileMenuOpen = false;
 
   private lastScrollY = 0;
   private navHidden = false;
 
+  toggleMobileMenu(): void {
+    this.mobileMenuOpen = !this.mobileMenuOpen;
+  }
+
+  closeMobileMenu(): void {
+    this.mobileMenuOpen = false;
+  }
+
   @HostBinding('class.nav-hidden')
   get isNavHidden(): boolean {
-    return this.navHidden;
+    // If mobile menu is open, don't hide the navbar on scroll
+    return this.navHidden && !this.mobileMenuOpen;
   }
 
   @HostListener('window:scroll', [])
