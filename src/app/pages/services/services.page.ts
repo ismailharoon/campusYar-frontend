@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { RouterLink } from '@angular/router';
 
 interface Stage {
   icon: string;
@@ -9,10 +9,9 @@ interface Stage {
   desc: string;
   link: string;
   routerLink: string;
-  image: string;
 }
 
-interface FanItem {
+interface SplitFeature {
   title: string;
   desc: string;
 }
@@ -44,7 +43,6 @@ export class ServicesPage implements OnInit, AfterViewInit {
       desc: 'Seven questions. One clear answer — which route to Germany actually fits your education level and academic background.',
       link: 'Try Pathway Finder',
       routerLink: '/eligibility',
-      image: 'assets/step1.png',
     },
     {
       icon: 'cap',
@@ -53,7 +51,6 @@ export class ServicesPage implements OnInit, AfterViewInit {
       desc: "DAAD's full database, filtered for Pakistani students — with APS and recognition notes attached to help you apply directly.",
       link: 'Search Universities',
       routerLink: '/universities',
-      image: 'assets/step2.png',
     },
     {
       icon: 'pen',
@@ -62,7 +59,6 @@ export class ServicesPage implements OnInit, AfterViewInit {
       desc: 'SOP, LOR and CV — structure and templates that match what German admissions committees actually expect and look for.',
       link: 'See Templates',
       routerLink: '#',
-      image: 'assets/step3.png',
     },
     {
       icon: 'chat',
@@ -71,7 +67,6 @@ export class ServicesPage implements OnInit, AfterViewInit {
       desc: 'The IELTS, TestDaF and German (A1–B2) resources worth your time — free channels, apps, and official practice tests.',
       link: 'Browse Resources',
       routerLink: '#',
-      image: 'assets/step4.png',
     },
     {
       icon: 'coin',
@@ -80,7 +75,6 @@ export class ServicesPage implements OnInit, AfterViewInit {
       desc: 'Blocked account setup, semester contributions, and realistic cost of living — in EUR and PKR, so nothing surprises you later.',
       link: 'Read the Guide',
       routerLink: '#',
-      image: 'assets/step5.png',
     },
     {
       icon: 'seal',
@@ -89,7 +83,6 @@ export class ServicesPage implements OnInit, AfterViewInit {
       desc: 'Costs, document checklists, and the exact step-by-step verification process for your APS appointment in Islamabad.',
       link: 'Read the Guide',
       routerLink: '#',
-      image: 'https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=500&q=80',
     },
     {
       icon: 'passport',
@@ -98,7 +91,6 @@ export class ServicesPage implements OnInit, AfterViewInit {
       desc: 'Embassy booking tips, complete document requirements, and what actually happens inside the interview room.',
       link: 'Read the Guide',
       routerLink: '#',
-      image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=500&q=80',
     },
     {
       icon: 'plane',
@@ -107,30 +99,26 @@ export class ServicesPage implements OnInit, AfterViewInit {
       desc: 'City accommodation search, Anmeldung registration, opening a local bank account — your first two weeks, mapped.',
       link: 'Read the Guide',
       routerLink: '#',
-      image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=500&q=80',
     },
   ];
 
   readonly rotations = [-6, 4, -3, 7, -5, 3, -4, 6];
+  readonly progressArray = [0, 1, 2, 3, 4, 5, 6, 7];
 
-  readonly buildItems: FanItem[] = [
+  readonly buildFeatures: SplitFeature[] = [
     { title: 'Pathway Finder', desc: 'Your route, mapped in one sitting' },
     { title: 'University Finder', desc: 'DAAD data, filtered for you' },
     { title: 'Checklist Generator', desc: 'Every document, one list' },
-    { title: 'SOP / LOR / CV', desc: 'Templates that actually work' },
-    { title: 'APS Guide', desc: 'Islamabad, demystified' },
-    { title: 'Visa Guide', desc: 'The embassy, explained' },
+    { title: 'SOP / LOR / CV templates', desc: 'Structures that match what admissions expect' },
+    { title: 'APS & Visa guides', desc: 'Islamabad and the embassy, demystified' },
   ];
 
-  readonly curateItems: FanItem[] = [
-    { title: 'IELTS Prep', desc: 'Free videos, apps, mock tests' },
-    { title: 'TestDaF Prep', desc: 'The channels worth watching' },
-    { title: 'German A1–B2', desc: "Courses that don't cost anything" },
-    { title: 'Scholarships', desc: "Beyond DAAD's own list" },
+  readonly curateFeatures: SplitFeature[] = [
+    { title: 'IELTS prep', desc: 'Free videos, apps, and mock tests worth your time' },
+    { title: 'TestDaF prep', desc: 'The channels that actually help' },
+    { title: 'German A1–B2 courses', desc: 'Free options, ranked by outcome' },
+    { title: 'Scholarships', desc: "Beyond DAAD's own shortlist" },
   ];
-
-  readonly buildAngles = [-8, -4, -1, 3, 6, 9];
-  readonly curateAngles = [-6, -2, 2, 6];
 
   readonly faqs: Faq[] = [
     {
@@ -168,7 +156,7 @@ export class ServicesPage implements OnInit, AfterViewInit {
             }
           });
         },
-        { threshold: 0.15 }
+        { threshold: 0.2 }
       );
       if (this.trailContainer) {
         observer.observe(this.trailContainer.nativeElement);

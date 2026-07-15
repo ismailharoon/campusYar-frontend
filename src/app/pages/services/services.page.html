@@ -1,103 +1,290 @@
+<!-- ============ HERO ============ -->
 <section class="hero">
   <div class="wrap hero-grid">
-    <div>
+    <div class="hero-copy">
       <span class="hero-tag">no consultant needed —</span>
-      <h1>Everything between "I want to study in Germany" and your visa stamp.</h1>
-      <p>Eight stages. Tap one below to see exactly what CampusYar hands you at that point.</p>
+      <h1>Everything between "I want to study in Germany" <span class="grad-text">and your visa stamp.</span></h1>
+      <p>Eight stages, one platform. Every guide is sourced, dated, and built for a Pakistani applicant — not copy-pasted from a generic study-abroad blog.</p>
+      <div class="hero-ctas">
+        <a routerLink="/eligibility" class="btn-primary">Start Now — it's free →</a>
+        <a href="#trail" class="btn-secondary">See all 8 stages</a>
+      </div>
+      <div class="hero-proof">
+        <span class="dots">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </span>
+        Sourced from DAAD, APS Pakistan &amp; the German Embassy — last reviewed Jun 2026
+      </div>
     </div>
-    <div class="pass">
-      <div class="route"><span class="city">KHI</span><span class="arrow">✈</span><span class="city">BER</span></div>
-      <div class="field">Status</div>
-      <div class="value">In Progress — Stage 3 of 8</div>
-      <div class="field">Est. Timeline</div>
-      <div class="value">14 months to enrollment</div>
+
+    <div class="hero-art">
+      <div class="art-disc"></div>
+      <svg viewBox="0 0 400 380" xmlns="http://www.w3.org/2000/svg">
+        <!-- passport -->
+        <g transform="translate(120,60) rotate(-8)">
+          <rect x="0" y="0" width="130" height="170" rx="8" fill="#7A2340"/>
+          <rect x="8" y="8" width="114" height="154" rx="5" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="1.5"/>
+          <circle cx="65" cy="60" r="22" fill="none" stroke="#F1E4C6" stroke-width="2"/>
+          <path d="M65 48 L70 60 L65 72 L60 60 Z" fill="#F1E4C6"/>
+          <text x="65" y="115" text-anchor="middle" fill="#F1E4C6" font-family="Poppins" font-weight="700" font-size="10">PASSPORT</text>
+          <text x="65" y="130" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-family="Poppins" font-weight="700" font-size="8">PAKISTAN</text>
+        </g>
+        <!-- boarding pass -->
+        <g transform="translate(210,160) rotate(6)">
+          <rect x="0" y="0" width="150" height="86" rx="6" fill="#FFFDF7" stroke="#E3DBC9" stroke-width="1.5"/>
+          <line x1="105" y1="0" x2="105" y2="86" stroke="#E3DBC9" stroke-width="1.5" stroke-dasharray="3 3"/>
+          <text x="14" y="24" fill="#201B15" font-family="Poppins" font-weight="800" font-size="15">KHI</text>
+          <path d="M46 22 L64 22 M58 17 L64 22 L58 27" stroke="#C1501F" stroke-width="2" fill="none"/>
+          <text x="70" y="24" fill="#201B15" font-family="Poppins" font-weight="800" font-size="15">BER</text>
+          <text x="14" y="42" fill="#71685A" font-family="Inter" font-size="8">DEPARTS</text>
+          <text x="14" y="56" fill="#201B15" font-family="Poppins" font-weight="700" font-size="11">Stage 03 / 08</text>
+          <text x="118" y="42" fill="#71685A" font-family="Inter" font-size="8">SEAT</text>
+          <text x="118" y="56" fill="#201B15" font-family="Poppins" font-weight="700" font-size="11">CY-01</text>
+        </g>
+        <!-- stamp seal -->
+        <g transform="translate(70,220)">
+          <circle cx="30" cy="30" r="30" fill="none" stroke="#B98A2E" stroke-width="2.5" stroke-dasharray="4 3"/>
+          <path d="M18 30 L26 38 L42 20" stroke="#B98A2E" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </g>
+        <!-- small compass -->
+        <g transform="translate(255,55)">
+          <circle cx="18" cy="18" r="18" fill="none" stroke="#C1501F" stroke-width="2"/>
+          <path d="M18 8 L22 18 L18 28 L14 18 Z" fill="#C1501F"/>
+        </g>
+      </svg>
+
+      <div class="float-card fc1 good">
+        <div class="fc-label"><span class="fc-dot"></span>APS Certificate</div>
+        <div class="fc-value">Verified ✓</div>
+      </div>
+      <div class="float-card fc2 amber">
+        <div class="fc-label"><span class="fc-dot"></span>Blocked Account</div>
+        <div class="fc-value">€992 / month</div>
+      </div>
+      <div class="float-card fc3">
+        <div class="fc-label">Visa Progress</div>
+        <div class="fc-value">Stage 3 of 8</div>
+      </div>
+      <div class="float-card fc4 good">
+        <div class="fc-label"><span class="fc-dot"></span>Est. Timeline</div>
+        <div class="fc-value">14 months</div>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="trail-section">
+<!-- ============ WHY SECTION ============ -->
+<section class="why-section">
+  <div class="wrap">
+    <div class="why-head">
+      <span class="kicker">how it actually works —</span>
+      <h2>Built so you never have to guess your next step.</h2>
+    </div>
+
+    <div class="feature-row">
+      <div class="f-visual">
+        <div class="visual-card">
+          <svg viewBox="0 0 320 220" xmlns="http://www.w3.org/2000/svg">
+            <rect x="10" y="10" width="300" height="200" rx="10" fill="var(--paper)"/>
+            <rect x="30" y="34" width="180" height="14" rx="4" fill="var(--border)"/>
+            <rect x="30" y="58" width="120" height="10" rx="4" fill="var(--border)"/>
+            <rect x="30" y="90" width="260" height="1.5" fill="var(--border)"/>
+            <circle cx="42" cy="112" r="9" fill="#3E9160"/>
+            <path d="M38 112 L41 115 L47 108" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <rect x="60" y="106" width="150" height="12" rx="3" fill="var(--border)"/>
+            <circle cx="42" cy="142" r="9" fill="var(--gold)"/>
+            <text x="42" y="146" text-anchor="middle" fill="#fff" font-family="Poppins" font-weight="800" font-size="10">!</text>
+            <rect x="60" y="136" width="190" height="12" rx="3" fill="var(--border)"/>
+            <circle cx="42" cy="172" r="9" fill="none" stroke="var(--accent)" stroke-width="2"/>
+            <rect x="60" y="166" width="130" height="12" rx="3" fill="var(--border)"/>
+          </svg>
+        </div>
+        <div class="f-tag" style="top:-14px; left:24px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#3E9160" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+          APS — Done
+        </div>
+        <div class="f-tag" style="bottom:-16px; right:16px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+          Visa — Due in 12 days
+        </div>
+      </div>
+      <div class="f-text">
+        <span class="who">Stage tracker</span>
+        <h3>See exactly what's done, what's next, and what's overdue.</h3>
+        <p>No more re-reading five Facebook group posts to figure out where you stand. One checklist, your actual progress.</p>
+        <div class="f-list">
+          <div class="f-item">
+            <div class="f-check">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <path d="M20 6L9 17l-5-5" />
+              </svg>
+            </div>
+            <div>
+              <div class="f-title">Stage-by-stage checklist</div>
+              <div class="f-desc">Every document mapped to the exact stage it belongs to.</div>
+            </div>
+          </div>
+          <div class="f-item">
+            <div class="f-check">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <path d="M20 6L9 17l-5-5" />
+              </svg>
+            </div>
+            <div>
+              <div class="f-title">Deadline flags</div>
+              <div class="f-desc">Blocked-account and APS timelines flagged before they slip.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="feature-row rev">
+      <div class="f-visual">
+        <div class="visual-card">
+          <svg viewBox="0 0 320 220" xmlns="http://www.w3.org/2000/svg">
+            <rect x="10" y="10" width="300" height="200" rx="10" fill="var(--paper)"/>
+            <rect x="34" y="30" width="110" height="80" rx="6" fill="#FFFDF7" stroke="var(--border)"/>
+            <rect x="44" y="42" width="90" height="8" rx="3" fill="var(--border)"/>
+            <rect x="44" y="58" width="60" height="8" rx="3" fill="var(--border)"/>
+            <rect x="44" y="78" width="70" height="18" rx="4" fill="var(--accent)"/>
+            <text x="79" y="90" text-anchor="middle" fill="#fff" font-family="Poppins" font-weight="700" font-size="9">TU Munich</text>
+            <rect x="156" y="30" width="110" height="80" rx="6" fill="#FFFDF7" stroke="var(--border)"/>
+            <rect x="166" y="42" width="90" height="8" rx="3" fill="var(--border)"/>
+            <rect x="166" y="58" width="60" height="8" rx="3" fill="var(--border)"/>
+            <rect x="166" y="78" width="70" height="18" rx="4" fill="var(--gold)"/>
+            <text x="201" y="90" text-anchor="middle" fill="#fff" font-family="Poppins" font-weight="700" font-size="9">RWTH Aachen</text>
+            <rect x="34" y="126" width="232" height="10" rx="4" fill="var(--border)"/>
+            <rect x="34" y="126" width="150" height="10" rx="4" fill="var(--accent)"/>
+            <text x="34" y="158" fill="var(--text-muted)" font-family="Inter" font-size="9">Matching your grades, budget &amp; APS field</text>
+          </svg>
+        </div>
+        <div class="f-tag" style="top:-14px; right:20px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M15 9l-3 6-3-2 3-6z"/></svg>
+          412 programs matched
+        </div>
+      </div>
+      <div class="f-text">
+        <span class="who">University finder</span>
+        <h3>DAAD's full database, filtered for a Pakistani transcript.</h3>
+        <p>Search by your actual grades, budget, and field — with APS recognition notes attached to every result, not a generic ranking list.</p>
+        <div class="f-list">
+          <div class="f-item">
+            <div class="f-check">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <path d="M20 6L9 17l-5-5" />
+              </svg>
+            </div>
+            <div>
+              <div class="f-title">Grade &amp; budget matching</div>
+              <div class="f-desc">Only see programs you can realistically qualify for and afford.</div>
+            </div>
+          </div>
+          <div class="f-item">
+            <div class="f-check">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <path d="M20 6L9 17l-5-5" />
+              </svg>
+            </div>
+            <div>
+              <div class="f-title">APS recognition notes</div>
+              <div class="f-desc">Know before you apply whether your degree clears APS.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ STAMP TRAIL ============ -->
+<section class="trail-section" id="trail">
   <div class="wrap">
     <div class="trail-head">
       <span class="kicker">your route, stamped —</span>
-      <h2>Tap a stage</h2>
+      <h2>All 8 stages, tap to explore</h2>
     </div>
-
-    <!-- Stamps container -->
-    <div class="trail" #trailContainer>
-      <div
-        *ngFor="let s of stages; let i = index"
-        class="stamp"
-        [class.stamped]="stampsLoaded"
-        [class.active]="selectedStageIndex === i"
-        [style.--rot]="rotations[i] + 'deg'"
-        [style.marginTop]="i % 2 === 0 ? '0px' : '22px'"
-        (click)="selectStage(i)"
-      >
-        <!-- Icon rendering -->
-        <ng-container [ngSwitch]="s.icon">
-          <svg *ngSwitchCase="'compass'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-            <circle cx="12" cy="12" r="9" />
-            <path d="M15 9l-3 6-3-2 3-6z" />
-          </svg>
-          <svg *ngSwitchCase="'cap'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-            <path d="M2 9l10-4 10 4-10 4-10-4z" />
-            <path d="M6 11v5c0 1.5 3 3 6 3s6-1.5 6-3v-5" />
-          </svg>
-          <svg *ngSwitchCase="'pen'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-            <path d="M4 20l3.5-1 10-10-2.5-2.5-10 10-1 3.5z" />
-            <path d="M14 6l2.5 2.5" />
-          </svg>
-          <svg *ngSwitchCase="'chat'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-            <path d="M4 5h16v10H8l-4 4V5z" />
-          </svg>
-          <svg *ngSwitchCase="'coin'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-            <circle cx="12" cy="12" r="8" />
-            <path d="M12 8v8M9 10h4a2 2 0 010 4H9" />
-          </svg>
-          <svg *ngSwitchCase="'seal'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-            <circle cx="12" cy="9" r="5" />
-            <path d="M9 13l-1.5 7L12 18l4.5 2L15 13" />
-          </svg>
-          <svg *ngSwitchCase="'passport'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-            <rect x="5" y="3" width="14" height="18" rx="1.5" />
-            <circle cx="12" cy="10" r="2.3" />
-            <path d="M9 16h6" />
-          </svg>
-          <svg *ngSwitchCase="'plane'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-            <path d="M3 13l7-2 6-8 2 1-4 8 5 1-1 2-6-1-4 5-2-1 2-5-5-1z" />
-          </svg>
-        </ng-container>
-
-        <div class="num">0{{ i + 1 }}</div>
-        <div class="label">{{ s.title }}</div>
+    
+    <div class="trail-panel">
+      <!-- Left stamps trail -->
+      <div class="trail" #trailContainer>
+        <div
+          *ngFor="let s of stages; let i = index"
+          class="stamp"
+          [class.stamped]="stampsLoaded"
+          [class.active]="selectedStageIndex === i"
+          [style.--rot]="rotations[i] + 'deg'"
+          [style.marginTop]="i % 2 === 0 ? '0px' : '18px'"
+          (click)="selectStage(i)"
+        >
+          <!-- Icons -->
+          <ng-container [ngSwitch]="s.icon">
+            <svg *ngSwitchCase="'compass'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+              <circle cx="12" cy="12" r="9" />
+              <path d="M15 9l-3 6-3-2 3-6z" />
+            </svg>
+            <svg *ngSwitchCase="'cap'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+              <path d="M2 9l10-4 10 4-10 4-10-4z" />
+              <path d="M6 11v5c0 1.5 3 3 6 3s6-1.5 6-3v-5" />
+            </svg>
+            <svg *ngSwitchCase="'pen'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+              <path d="M4 20l3.5-1 10-10-2.5-2.5-10 10-1 3.5z" />
+              <path d="M14 6l2.5 2.5" />
+            </svg>
+            <svg *ngSwitchCase="'chat'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+              <path d="M4 5h16v10H8l-4 4V5z" />
+            </svg>
+            <svg *ngSwitchCase="'coin'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+              <circle cx="12" cy="12" r="8" />
+              <path d="M12 8v8M9 10h4a2 2 0 010 4H9" />
+            </svg>
+            <svg *ngSwitchCase="'seal'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+              <circle cx="12" cy="9" r="5" />
+              <path d="M9 13l-1.5 7L12 18l4.5 2L15 13" />
+            </svg>
+            <svg *ngSwitchCase="'passport'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+              <rect x="5" y="3" width="14" height="18" rx="1.5" />
+              <circle cx="12" cy="10" r="2.3" />
+              <path d="M9 16h6" />
+            </svg>
+            <svg *ngSwitchCase="'plane'" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+              <path d="M3 13l7-2 6-8 2 1-4 8 5 1-1 2-6-1-4 5-2-1 2-5-5-1z" />
+            </svg>
+          </ng-container>
+          
+          <div class="num">0{{ i + 1 }}</div>
+          <div class="label">{{ s.title }}</div>
+        </div>
       </div>
-    </div>
-
-    <!-- Details card -->
-    <div class="index-card show" id="indexCard">
-      <div class="card-grid">
-        <div class="card-text">
-          <div class="who" [ngClass]="stages[selectedStageIndex].tag">
-            {{ stages[selectedStageIndex].tag === 'build' ? 'We build this' : 'We curate this' }}
-          </div>
-          <h3>{{ stages[selectedStageIndex].title }}</h3>
-          <p>{{ stages[selectedStageIndex].desc }}</p>
-          <a
-            [routerLink]="stages[selectedStageIndex].routerLink !== '#' ? stages[selectedStageIndex].routerLink : null"
-            [href]="stages[selectedStageIndex].routerLink === '#' ? 'javascript:void(0)' : null"
-            class="card-cta"
-          >
-            {{ stages[selectedStageIndex].link }} →
-          </a>
+      
+      <!-- Right active card -->
+      <div class="index-card show">
+        <div class="who" [ngClass]="stages[selectedStageIndex].tag">
+          {{ stages[selectedStageIndex].tag === 'build' ? 'We build this' : 'We curate this' }}
         </div>
-        <div class="card-image-wrap" *ngIf="stages[selectedStageIndex].image">
-          <img [src]="stages[selectedStageIndex].image" [alt]="stages[selectedStageIndex].title" />
+        <h3>{{ stages[selectedStageIndex].title }}</h3>
+        <p>{{ stages[selectedStageIndex].desc }}</p>
+        <div class="index-progress">
+          <span
+            *ngFor="let idx of progressArray"
+            [class.filled]="idx <= selectedStageIndex"
+          ></span>
         </div>
+        <a
+          [routerLink]="stages[selectedStageIndex].routerLink !== '#' ? stages[selectedStageIndex].routerLink : null"
+          [href]="stages[selectedStageIndex].routerLink === '#' ? 'javascript:void(0)' : null"
+          class="card-cta"
+        >
+          {{ stages[selectedStageIndex].link }} →
+        </a>
       </div>
     </div>
   </div>
 </section>
 
+<!-- ============ TRUST STRIP ============ -->
 <section class="trust-strip">
   <div class="wrap">
     <div class="trust-badge">
@@ -114,6 +301,7 @@
   </div>
 </section>
 
+<!-- ============ DECLARATION SECTION ============ -->
 <section class="declare-section">
   <div class="wrap">
     <div class="declare-form">
@@ -143,12 +331,14 @@
   </div>
 </section>
 
+<!-- ============ PROOF SECTION ============ -->
 <section class="proof-section">
   <div class="wrap">
     <div class="proof-wrap">
       <div class="receipt">
         <div class="rlabel">Checklist — APS Certificate</div>
         <div class="ritem"><input type="checkbox" checked disabled /><span>Matric &amp; Inter certificates (attested)</span></div>
+        <div class="receipt-divider"></div>
         <div class="ritem"><input type="checkbox" checked disabled /><span>Bachelor's degree + transcript</span></div>
         <div class="ritem"><input type="checkbox" disabled /><span>CNIC + passport copy</span></div>
         <div class="ritem"><input type="checkbox" disabled /><span>APS fee — PKR 18,500 (2026)</span></div>
@@ -165,45 +355,49 @@
   </div>
 </section>
 
-<section class="stack-section">
+<!-- ============ BUILD vs CURATE COLUMN CHECKLISTS ============ -->
+<section class="split-section">
   <div class="wrap">
-    <div class="stack-head">
+    <div class="split-head">
       <span class="kicker">the honest split —</span>
       <h2>What's ours, what's borrowed</h2>
     </div>
-    <div class="fan-wrap">
-      <div>
-        <div class="fan">
-          <div
-            *ngFor="let it of buildItems; let i = index"
-            class="fan-card"
-            [style.transform]="'translate(' + i * 4 + 'px, ' + i * 6 + 'px) rotate(' + buildAngles[i % buildAngles.length] + 'deg)'"
-            [style.zIndex]="i"
-          >
-            <h4>{{ it.title }}</h4>
-            <p>{{ it.desc }}</p>
+    <div class="split-grid">
+      <div class="split-col build">
+        <div class="who">We build this</div>
+        <h3>The tools</h3>
+        <div class="split-item" *ngFor="let f of buildFeatures">
+          <div class="sc">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+              <path d="M20 6L9 17l-5-5" />
+            </svg>
+          </div>
+          <div>
+            <div class="stitle">{{ f.title }}</div>
+            <div class="sdesc">{{ f.desc }}</div>
           </div>
         </div>
-        <div class="fan-title">We build this</div>
       </div>
-      <div>
-        <div class="fan">
-          <div
-            *ngFor="let it of curateItems; let i = index"
-            class="fan-card"
-            [style.transform]="'translate(' + i * 4 + 'px, ' + i * 6 + 'px) rotate(' + curateAngles[i % curateAngles.length] + 'deg)'"
-            [style.zIndex]="i"
-          >
-            <h4>{{ it.title }}</h4>
-            <p>{{ it.desc }}</p>
+      <div class="split-col curate">
+        <div class="who">We point you to the best</div>
+        <h3>The resources</h3>
+        <div class="split-item" *ngFor="let f of curateFeatures">
+          <div class="sc">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+              <path d="M20 6L9 17l-5-5" />
+            </svg>
+          </div>
+          <div>
+            <div class="stitle">{{ f.title }}</div>
+            <div class="sdesc">{{ f.desc }}</div>
           </div>
         </div>
-        <div class="fan-title">We point you to the best</div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- ============ FAQ SECTION ============ -->
 <section class="faq-section">
   <div class="wrap">
     <div class="declare-header" style="max-width: 640px; margin: 0 auto; border: none; padding: 0 0 20px; justify-content: center">
@@ -223,6 +417,7 @@
   </div>
 </section>
 
+<!-- ============ FINAL CTA STRIP ============ -->
 <div class="wrap">
   <div class="cta-strip">
     <div class="cta-left">
