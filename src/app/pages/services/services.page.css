@@ -1007,25 +1007,106 @@ h1, h2, h3 {
   margin-bottom: 10px;
 }
 
-.receipt .ritem {
+.receipt-barcode {
+  display: flex;
+  gap: 2.5px;
+  height: 20px;
+  margin-bottom: 12px;
+  opacity: 0.65;
+}
+
+.receipt-barcode span {
+  display: block;
+  background: var(--navy);
+  height: 100%;
+  width: 1px;
+}
+
+.receipt-barcode span:nth-child(even) { width: 1.5px; }
+.receipt-barcode span:nth-child(3n) { width: 3.5px; }
+.receipt-barcode span:nth-child(5n) { width: 2.5px; }
+.receipt-barcode span:nth-child(7n) { width: 4.5px; }
+
+.receipt-stamp {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  border: 1.5px solid var(--accent);
+  color: var(--accent);
+  font-family: var(--font-heading, 'Poppins', sans-serif);
+  text-transform: uppercase;
+  font-size: 8.5px;
+  font-weight: 800;
+  padding: 1px 5px;
+  border-radius: 4px;
+  transform: rotate(10deg);
+  letter-spacing: 0.04em;
+  opacity: 0.75;
+}
+
+.receipt-stamp.verified {
+  border-color: #3E9160;
+  color: #3E9160;
+}
+
+.receipt-stamp.required {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.receipt-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.receipt-list-item {
   display: flex;
   align-items: flex-start;
   gap: 8px;
   font-size: 12.5px;
-  padding: 5px 0;
+  padding: 4px 0;
   color: var(--navy);
 }
 
-.receipt .ritem input {
-  margin-top: 3px;
-  accent-color: var(--accent);
+.receipt-list-item .chk {
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+  border: 1px solid var(--border);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px;
+  background: #fff;
+  position: relative;
+}
+
+.receipt-list-item.done .chk {
+  background: #3E9160;
+  border-color: #3E9160;
+}
+
+.receipt-list-item.done .chk::after {
+  content: '';
+  position: absolute;
+  width: 4px;
+  height: 7px;
+  border: solid white;
+  border-width: 0 1.5px 1.5px 0;
+  transform: rotate(45deg);
+  top: 1.5px;
+  left: 4px;
 }
 
 .receipt .rsource {
+  font-family: 'Inter', sans-serif;
   font-size: 10px;
   color: var(--text-muted);
-  margin-top: 12px;
+  margin-top: 14px;
   font-style: italic;
+  display: block;
 }
 
 /* ============ FAQ ============ */
