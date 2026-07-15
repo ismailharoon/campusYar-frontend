@@ -49,14 +49,11 @@ app-root {
     overflow: visible;
 }
 
-main {
-    padding-top: 0 !important;
+main, .main-content {
+    padding-top: 100px;
     position: relative;
     z-index: 1;
-}
-
-main {
-    margin-top: 0 !important;
+    margin-top: 0;
 }
 
 p { font-weight: 500; color: var(--mu); line-height: 1.8; }

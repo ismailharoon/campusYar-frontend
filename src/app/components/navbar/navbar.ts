@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, HostListener, inject } from '@angular/core';
+import { Component, HostBinding, HostListener, inject } from '@angular/core';
 import { animate, style, transition, trigger } from '@angular/animations';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
@@ -26,9 +26,28 @@ export class Navbar {
   isScrolled = false;
   guidesOpen = false;
 
+  private lastScrollY = 0;
+  private navHidden = false;
+
+  @HostBinding('class.nav-hidden')
+  get isNavHidden(): boolean {
+    return this.navHidden;
+  }
+
   @HostListener('window:scroll', [])
   onWindowScroll() {
-    this.isScrolled = window.scrollY > 50;
+    const currentScrollY = window.scrollY;
+    this.isScrolled = currentScrollY > 50;
+
+    if (currentScrollY > this.lastScrollY && currentScrollY > 80) {
+      // Scrolling DOWN & past threshold → hide
+      this.navHidden = true;
+    } else {
+      // Scrolling UP → show
+      this.navHidden = false;
+    }
+
+    this.lastScrollY = currentScrollY;
   }
 
   @HostListener('document:click', ['$event'])

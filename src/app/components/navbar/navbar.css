@@ -1,16 +1,19 @@
 :host {
   display: block;
-  position: sticky;
+  position: fixed;
   top: 0;
-  z-index: 50;
+  left: 0;
   width: 100%;
+  z-index: 50;
+  transition: transform 0.3s ease;
+}
+
+:host(.nav-hidden) {
+  transform: translateY(-100%);
 }
 
 /* Navbar structure */
 .nav-shell {
-  position: sticky;
-  top: 0;
-  z-index: 50;
   width: 100%;
   background: #ffffff;
 }

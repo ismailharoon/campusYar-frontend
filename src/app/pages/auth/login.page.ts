@@ -2,16 +2,12 @@ import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
-import { MatButtonModule } from '@angular/material/button';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
 import { AuthService } from '../../services/auth.service';
-import { ScrollRevealDirective } from '../../directives/scroll-reveal.directive';
 
 @Component({
   selector: 'app-login-page',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, RouterLink, MatFormFieldModule, MatInputModule, MatButtonModule, ScrollRevealDirective],
+  imports: [CommonModule, ReactiveFormsModule, RouterLink],
   templateUrl: './login.page.html',
   styleUrl: './auth.page.css',
 })
@@ -39,5 +35,10 @@ export class LoginPage {
 
   togglePassword(): void {
     this.showPassword = !this.showPassword;
+  }
+
+  continueWithGoogle(): void {
+    // TODO: Wire to existing Google OAuth flow when implemented
+    console.log('Continue with Google clicked');
   }
 }

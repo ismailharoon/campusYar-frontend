@@ -2,16 +2,12 @@ import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { AbstractControl, FormBuilder, ReactiveFormsModule, ValidationErrors, Validators } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
-import { MatButtonModule } from '@angular/material/button';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
 import { AuthService } from '../../services/auth.service';
-import { ScrollRevealDirective } from '../../directives/scroll-reveal.directive';
 
 @Component({
   selector: 'app-signup-page',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, RouterLink, MatFormFieldModule, MatInputModule, MatButtonModule, ScrollRevealDirective],
+  imports: [CommonModule, ReactiveFormsModule, RouterLink],
   templateUrl: './signup.page.html',
   styleUrl: './auth.page.css',
 })
@@ -27,9 +23,9 @@ export class SignupPage {
     {
       fullName: ['', [Validators.required, Validators.minLength(2)]],
       email: ['', [Validators.required, Validators.email]],
-      phoneNumber: ['', [Validators.required, Validators.pattern(/^03\d{2}\d{7}$/)]],
       password: ['', [Validators.required, Validators.minLength(6)]],
       confirmPassword: ['', [Validators.required, Validators.minLength(6)]],
+      agreeTerms: [false, [Validators.requiredTrue]],
     },
     { validators: [this.passwordMatchValidator] },
   );
@@ -50,6 +46,11 @@ export class SignupPage {
 
   toggleConfirmPassword(): void {
     this.showConfirmPassword = !this.showConfirmPassword;
+  }
+
+  continueWithGoogle(): void {
+    // TODO: Wire to existing Google OAuth flow when implemented
+    console.log('Continue with Google clicked');
   }
 
   private passwordMatchValidator(control: AbstractControl): ValidationErrors | null {

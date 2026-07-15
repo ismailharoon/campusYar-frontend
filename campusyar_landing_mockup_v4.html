@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CampusYar — Find Your Germany Path</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FFFFFF;
+    --panel:#FFFFFF;
+    --panel-alt:#FFF6EC;
+    --navy:#28241F;
+    --accent:#E8712A;
+    --accent-dark:#C85A1B;
+    --accent-soft:#FDEADB;
+    --text:#28241F;
+    --text-muted:#6B6560;
+    --border:#EDE7DE;
+    --shadow: none;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{background:var(--bg); color:var(--text); font-family:'Inter', sans-serif; line-height:1.6; -webkit-font-smoothing:antialiased;}
+  a{color:inherit; text-decoration:none;}
+  img{display:block; width:100%; height:100%; object-fit:cover; background:var(--accent-soft);}
+  .wrap{max-width:1180px; margin:0 auto; padding:0 32px;}
+  .eyebrow{font-family:'Inter', sans-serif; font-size:12.5px; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent); font-weight:700;}
+  h1,h2,h3{font-family:'Poppins', sans-serif; font-weight:700; letter-spacing:-0.01em; color:var(--navy);}
+  em{font-style:normal; font-weight:700; color:var(--accent);}
+
+  /* NAVBAR - exact Study-in-Germany style: white top row + solid color nav band */
+  .top-row{background:#fff; padding:14px 0;}
+  .top-row .wrap{display:flex; align-items:center; justify-content:space-between; gap:24px;}
+  .logo{font-family:'Poppins', sans-serif; display:flex; align-items:center; gap:12px; color:var(--navy);}
+  .logo-mark{
+    width:44px; height:44px; border-radius:9px; background:var(--accent); color:#fff;
+    display:flex; align-items:center; justify-content:center; font-size:20px; font-family:'Poppins',sans-serif; font-weight:800; flex-shrink:0;
+  }
+  .logo-text{display:flex; flex-direction:column; line-height:1.15;}
+  .logo-text .l1{font-size:13px; font-weight:600; letter-spacing:0.04em; color:var(--text-muted); text-transform:uppercase;}
+  .logo-text .l2{font-size:21px; font-weight:800; color:var(--navy); letter-spacing:-0.01em;}
+  .cta-guide{
+    background:var(--accent); color:#fff; font-weight:700; font-size:15px; padding:14px 24px; border-radius:6px;
+    display:inline-flex; align-items:center; gap:10px; white-space:nowrap;
+  }
+  .cta-guide:hover{background:var(--accent-dark);}
+  .lang-toggle{display:flex; gap:8px; flex-shrink:0;}
+  .lang-box{
+    width:44px; height:44px; border:1.5px solid var(--border); border-radius:6px; display:flex; align-items:center;
+    justify-content:center; font-size:12px; font-weight:700; color:var(--navy); font-family:'Poppins',sans-serif;
+  }
+
+  .nav-band{background:var(--accent-soft); border-top:1px solid var(--border); border-bottom:1px solid var(--border);}
+  .nav-band .wrap{display:flex; align-items:center; justify-content:space-between; padding:0; }
+  .nav-links{display:flex; gap:0;}
+  .nav-links a{
+    font-family:'Poppins', sans-serif; font-weight:700; font-size:14px; letter-spacing:0.01em; text-transform:uppercase;
+    color:var(--navy); padding:17px 20px; display:flex; align-items:center; gap:5px;
+  }
+  .nav-links a:hover{color:var(--accent-dark);}
+  .nav-links a .caret{font-size:10px; margin-top:2px;}
+  .search-icon{
+    width:20px; height:20px; border:2px solid var(--navy); border-radius:50%; position:relative; margin-right:4px; cursor:pointer;
+  }
+  .search-icon::after{content:''; position:absolute; width:8px; height:2px; background:var(--navy); bottom:-5px; right:-6px; transform:rotate(45deg); border-radius:2px;}
+
+  nav{position:sticky; top:0; z-index:50;}
+  .btn-primary-lg{background:var(--accent); color:#fff; font-weight:700; font-size:16px; padding:16px 28px; border-radius:7px; display:inline-flex; align-items:center; gap:8px; }
+  .btn-primary-lg:hover{background:var(--accent-dark);}
+
+  /* HERO - full photo banner */
+  .hero-banner{position:relative; height:600px; margin:0 auto 0; max-width:1180px; border-radius:0 0 28px 28px; overflow:hidden; margin-top:0;}
+  .hero-banner img{position:absolute; inset:0;}
+  .hero-overlay{
+    position:absolute; inset:0;
+    background:rgba(27,24,20,0.62);
+  }
+  .hero-content{position:relative; z-index:2; height:100%; display:flex; flex-direction:column; justify-content:center; max-width:560px; padding:0 56px;}
+  .hero-content .eyebrow{color:#F2C879;}
+  .hero-content h1{color:#fff; font-size:46px; line-height:1.14; margin:16px 0 20px;}
+  .hero-content h1 em{color:#F2C879;}
+  .hero-content p{color:#D9DEE9; font-size:16.5px; max-width:430px; margin-bottom:28px;}
+
+  /* STAT STRIP */
+  .stat-strip{display:flex; justify-content:center; gap:64px; padding:34px 0; flex-wrap:wrap; border-bottom:1px solid var(--border);}
+  .stat-item{text-align:center;}
+  .stat-item .num{font-family:'Poppins',sans-serif; font-size:28px; color:var(--navy); font-weight:600;}
+  .stat-item .label{font-size:12.5px; color:var(--text-muted); margin-top:2px;}
+
+  /* ALTERNATING FEATURE ROWS */
+  .section{padding:80px 0;}
+  .section-head{max-width:620px; margin-bottom:50px;}
+  .section-head h2{font-size:34px; margin-top:12px;}
+
+  .feature-row{display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center; margin-bottom:70px;}
+  .feature-row.reverse .feature-img{order:2;}
+  .feature-row.reverse .feature-text{order:1;}
+  .feature-img{border-radius:18px; overflow:hidden; border:1px solid var(--border); height:340px; position:relative;}
+  .feature-tag{
+    position:absolute; bottom:16px; left:16px; background:rgba(255,255,255,0.95); padding:8px 14px;
+    border-radius:9px; font-size:12.5px; font-weight:600; color:var(--navy); display:flex; align-items:center; gap:8px;
+  }
+  .feature-tag .dotc{width:6px; height:6px; border-radius:50%; background:var(--accent-dark); display:inline-block;}
+  .feature-text .eyebrow{margin-bottom:12px; display:block;}
+  .feature-text h3{font-size:26px; margin-bottom:14px;}
+  .feature-text p{color:var(--text-muted); font-size:15px; margin-bottom:18px;}
+  .feature-list{list-style:none;}
+  .feature-list li{display:flex; align-items:flex-start; gap:10px; font-size:14px; color:var(--text); margin-bottom:10px;}
+  .feature-list li::before{content:'✓'; color:var(--accent-dark); font-weight:700; flex-shrink:0;}
+
+  /* PILLARS - photo cards */
+  .pillars-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:18px;}
+  .pillar-card{background:var(--panel); border:1px solid var(--border); border-radius:16px; overflow:hidden; border:1px solid var(--border); transition:transform .15s ease;}
+  .pillar-card:hover{transform:translateY(-4px);}
+  .pillar-photo{height:130px; position:relative;}
+  .pillar-num{position:absolute; top:12px; left:12px; background:var(--navy); color:#fff; font-family:'Inter',sans-serif; font-size:11px; padding:4px 9px; border-radius:6px;}
+  .pillar-body{padding:20px 20px 22px;}
+  .pillar-card h3{font-size:16px; font-family:'Inter',sans-serif; font-weight:600; margin-bottom:8px;}
+  .pillar-card p{font-size:13.5px; color:var(--text-muted); margin-bottom:14px;}
+  .pillar-link{font-size:13px; color:var(--accent-dark); font-weight:600;}
+
+  /* STEPS FILMSTRIP */
+  .steps-strip{display:grid; grid-template-columns:repeat(4,1fr); gap:16px;}
+  .step-card{position:relative; border-radius:16px; overflow:hidden; height:240px; border:1px solid var(--border);}
+  .step-card img{filter:brightness(0.62);}
+  .step-card-content{position:absolute; inset:0; padding:20px; display:flex; flex-direction:column; justify-content:flex-end;}
+  .step-badge{
+    width:32px; height:32px; border-radius:50%; background:var(--accent); color:#fff; font-weight:700;
+    display:flex; align-items:center; justify-content:center; font-family:'Inter',sans-serif; font-size:13px; margin-bottom:10px;
+  }
+  .step-card h4{color:#fff; font-family:'Inter',sans-serif; font-size:15px; font-weight:600; margin-bottom:6px;}
+  .step-card p{color:#DDE2EC; font-size:12.5px;}
+
+  /* TESTIMONIAL / AVATAR TRUST */
+  .trust-band{background:var(--navy); padding:56px 0;}
+  .trust-band .wrap{display:flex; align-items:center; gap:48px; flex-wrap:wrap;}
+  .avatar-cluster{display:flex; flex-shrink:0;}
+  .avatar-cluster img{width:64px; height:64px; border-radius:50%; border:3px solid var(--navy); margin-left:-16px;}
+  .avatar-cluster img:first-child{margin-left:0;}
+  .trust-quote{color:#fff; font-family:'Poppins',sans-serif; font-size:20px; max-width:640px; line-height:1.5;}
+  .trust-quote span{color:#F2C879;}
+
+  /* KNOWLEDGE HUB - photo cards */
+  .guides-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:18px;}
+  .guide-card{background:var(--panel); border:1px solid var(--border); border-radius:16px; overflow:hidden; border:1px solid var(--border);}
+  .guide-photo{height:110px;}
+  .guide-card-body{padding:18px 20px 20px;}
+  .guide-card h3{font-size:15px; font-family:'Inter',sans-serif; font-weight:600; margin-bottom:8px;}
+  .guide-card p{font-size:12.8px; color:var(--text-muted); margin-bottom:14px;}
+  .verified-tag{font-family:'Inter', sans-serif; font-size:10.5px; color:var(--accent-dark); display:flex; align-items:center; gap:6px;}
+  .dotc{width:5px; height:5px; border-radius:50%; background:var(--accent-dark); display:inline-block;}
+
+  /* FINAL CTA - photo banner */
+  .final-banner{position:relative; height:320px; border-radius:24px; overflow:hidden; margin:0 32px;}
+  .final-banner img{position:absolute; inset:0;}
+  .final-overlay{position:absolute; inset:0; background:rgba(15,20,35,0.72); display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:20px;}
+  .final-overlay h2{color:#fff; font-size:32px; margin-bottom:12px;}
+  .final-overlay p{color:#D9DEE9; margin-bottom:26px;}
+
+  footer{padding:56px 0 36px; border-top:1px solid var(--border); margin-top:20px;}
+  .footer-grid{display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:40px; margin-bottom:36px;}
+  .footer-grid h4{font-size:12.5px; text-transform:uppercase; letter-spacing:0.07em; color:var(--text-muted); margin-bottom:16px; font-family:'Inter', sans-serif; font-weight:500;}
+  .footer-grid a{display:block; font-size:14px; color:var(--text-muted); margin-bottom:10px;}
+  .footer-bottom{font-size:12.5px; color:var(--text-muted); display:flex; justify-content:space-between; padding-top:22px; border-top:1px solid var(--border);}
+
+  @media(max-width:900px){
+    .feature-row{grid-template-columns:1fr;}
+    .feature-row.reverse .feature-img, .feature-row.reverse .feature-text{order:0;}
+    .pillars-grid, .steps-strip, .guides-grid{grid-template-columns:1fr 1fr;}
+    .footer-grid{grid-template-columns:1fr 1fr;}
+    .nav-links{display:none;}
+    .cta-guide{font-size:13px; padding:11px 16px;}
+    .lang-toggle{display:none;}
+    .logo-text .l2{font-size:18px;}
+    .hero-banner{height:520px; border-radius:0 0 20px 20px;}
+    .hero-content{padding:0 28px;}
+    .hero-content h1{font-size:34px;}
+    .trust-band .wrap{flex-direction:column; text-align:center;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="top-row">
+    <div class="wrap">
+      <div class="logo">
+        <span class="logo-mark">C</span>
+        <div class="logo-text">
+          <span class="l1">Study In</span>
+          <span class="l2">CampusYar</span>
+        </div>
+      </div>
+      <div class="lang-toggle">
+        <div class="lang-box">EN</div>
+        <div class="lang-box">اردو</div>
+      </div>
+    </div>
+  </div>
+  <div class="nav-band">
+    <div class="wrap">
+      <div class="nav-links">
+        <a href="#">Plan Your Studies</a>
+        <a href="#">University Finder</a>
+        <a href="#">Pathways <span class="caret">▾</span></a>
+        <a href="#">Living in Germany</a>
+        <a href="#">Guides</a>
+        <a href="#">Checklist</a>
+      </div>
+      <div class="search-icon"></div>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap" style="padding-top:20px;">
+<section class="hero-banner">
+  <img src="https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&w=1400&q=80" alt="Germany city architecture">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="eyebrow">Pakistan → Germany, mapped out</div>
+    <h1>Find your <em>exact</em> path to Germany.</h1>
+    <p>Answer 7 quick questions. Get your real pathway, matching universities, and a document checklist — free, in under 3 minutes.</p>
+    <a href="#" class="btn-primary-lg">Start Now</a>
+  </div>
+</section>
+</div>
+<div class="wrap">
+  <div class="stat-strip">
+    <div class="stat-item"><div class="num">5</div><div class="label">Pathways covered</div></div>
+    <div class="stat-item"><div class="num">400+</div><div class="label">DAAD programs indexed</div></div>
+    <div class="stat-item"><div class="num">0</div><div class="label">Consultant fees</div></div>
+    <div class="stat-item"><div class="num">3 min</div><div class="label">To your pathway</div></div>
+  </div>
+</div>
+
+<section class="section" style="padding-bottom:20px;">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">The Problem</div>
+      <h2>Ten tabs open. Still no idea what to do.</h2>
+    </div>
+
+    <div class="feature-row">
+      <div class="feature-img">
+        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80" alt="Student researching on laptop">
+        <div class="feature-tag"><span class="dotc"></span>Real confusion, every intake</div>
+      </div>
+      <div class="feature-text">
+        <span class="eyebrow">No starting point</span>
+        <h3>You don't even know where you fit.</h3>
+        <p>Eligibility, pathway, timeline — most students discover the real requirements only after weeks of scattered searching.</p>
+        <ul class="feature-list">
+          <li>Whether you qualify for a direct Bachelor's or Master's</li>
+          <li>What to do if you don't meet requirements yet</li>
+          <li>Realistic cost and timeline for your specific case</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="feature-row reverse">
+      <div class="feature-img">
+        <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&w=800&q=80" alt="Documents and passport flatlay">
+        <div class="feature-tag"><span class="dotc"></span>Discovered too late</div>
+      </div>
+      <div class="feature-text">
+        <span class="eyebrow">Hidden details</span>
+        <h3>The costs nobody warns you about.</h3>
+        <p>Blocked account, APS certificate, UniAssist fees — critical requirements that surface only after you've already committed time and money.</p>
+        <ul class="feature-list">
+          <li>€11,904 blocked account — and when you can skip it</li>
+          <li>APS certificate: 4-8 weeks, Islamabad only</li>
+          <li>Application deadlines most students miss entirely</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:20px;">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">What CampusYar Does</div>
+      <h2>One thing, done properly.</h2>
+    </div>
+    <div class="pillars-grid">
+      <div class="pillar-card">
+        <div class="pillar-photo"><div class="pillar-num">01</div><img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=500&q=80" alt="Pathway finder"></div>
+        <div class="pillar-body">
+          <h3>Pathway Finder</h3>
+          <p>A guided conversation that finds your exact route — not a generic form.</p>
+          <a href="#" class="pillar-link">Try it →</a>
+        </div>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-photo"><div class="pillar-num">02</div><img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=500&q=80" alt="University finder"></div>
+        <div class="pillar-body">
+          <h3>University Finder</h3>
+          <p>DAAD's full database, filtered for Pakistani students.</p>
+          <a href="#" class="pillar-link">Search unis →</a>
+        </div>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-photo"><div class="pillar-num">03</div><img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?auto=format&fit=crop&w=500&q=80" alt="Knowledge hub"></div>
+        <div class="pillar-body">
+          <h3>Knowledge Hub</h3>
+          <p>Every guide you need — verified and dated, in one place.</p>
+          <a href="#" class="pillar-link">Read guides →</a>
+        </div>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-photo"><div class="pillar-num">04</div><img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=500&q=80" alt="Checklist generator"></div>
+        <div class="pillar-body">
+          <h3>Checklist Generator</h3>
+          <p>Your personal document list, built from your actual pathway.</p>
+          <a href="#" class="pillar-link">Get checklist →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0;">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">How It Works</div>
+      <h2>Four steps. Ten minutes. Done.</h2>
+    </div>
+    <div class="steps-strip">
+      <div class="step-card">
+        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=500&q=80" alt="Step 1">
+        <div class="step-card-content">
+          <div class="step-badge">01</div>
+          <h4>Answer 7 questions</h4>
+          <p>About your education and readiness</p>
+        </div>
+      </div>
+      <div class="step-card">
+        <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=500&q=80" alt="Step 2">
+        <div class="step-card-content">
+          <div class="step-badge">02</div>
+          <h4>Get your pathway</h4>
+          <p>A clear route with a real timeline</p>
+        </div>
+      </div>
+      <div class="step-card">
+        <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=500&q=80" alt="Step 3">
+        <div class="step-card-content">
+          <div class="step-badge">03</div>
+          <h4>Find matching unis</h4>
+          <p>Pre-filtered by pathway and budget</p>
+        </div>
+      </div>
+      <div class="step-card">
+        <img src="https://images.unsplash.com/photo-1568667256549-094345857637?auto=format&fit=crop&w=500&q=80" alt="Step 4">
+        <div class="step-card-content">
+          <div class="step-badge">04</div>
+          <h4>Download checklist</h4>
+          <p>Nothing surprises you later</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="trust-band">
+  <div class="wrap">
+    <div class="avatar-cluster">
+      <img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?auto=format&fit=crop&w=200&q=80" alt="Student">
+      <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=200&q=80" alt="Student">
+      <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80" alt="Student">
+    </div>
+    <div class="trust-quote">"Sab se pehli baar lagaa <span>kisi ne mera confusion samjha</span> — bina kuch beche hue." — built for students planning Winter '26 & Summer '27 intakes</div>
+  </div>
+</div>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Knowledge Hub</div>
+      <h2>The guides consultants charge for.</h2>
+    </div>
+    <div class="guides-grid">
+      <div class="guide-card">
+        <div class="guide-photo"><img src="https://images.unsplash.com/photo-1568667256549-094345857637?auto=format&fit=crop&w=400&q=80" alt="APS guide"></div>
+        <div class="guide-card-body">
+          <h3>APS Certificate Guide</h3>
+          <p>What it is, cost, timeline, and exactly what to submit.</p>
+          <div class="verified-tag"><span class="dotc"></span>Verified Jun 2026</div>
+        </div>
+      </div>
+      <div class="guide-card">
+        <div class="guide-photo"><img src="https://images.unsplash.com/photo-1554224154-26032ffc0d07?auto=format&fit=crop&w=400&q=80" alt="Blocked account guide"></div>
+        <div class="guide-card-body">
+          <h3>Blocked Account</h3>
+          <p>Fintiba vs Coracle compared — and when you can skip it.</p>
+          <div class="verified-tag"><span class="dotc"></span>Verified Jun 2026</div>
+        </div>
+      </div>
+      <div class="guide-card">
+        <div class="guide-photo"><img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=400&q=80" alt="UniAssist guide"></div>
+        <div class="guide-card-body">
+          <h3>UniAssist Explained</h3>
+          <p>Which universities need it, fees, and full submission flow.</p>
+          <div class="verified-tag"><span class="dotc"></span>Verified Jun 2026</div>
+        </div>
+      </div>
+      <div class="guide-card">
+        <div class="guide-photo"><img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=400&q=80" alt="Visa guide"></div>
+        <div class="guide-card-body">
+          <h3>Visa Process</h3>
+          <p>Embassy appointment, documents, what to expect.</p>
+          <div class="verified-tag"><span class="dotc"></span>Verified Jun 2026</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="final-banner">
+    <img src="https://images.unsplash.com/photo-1560969184-10fe8719e047?auto=format&fit=crop&w=1400&q=80" alt="Germany campus">
+    <div class="final-overlay">
+      <h2>Stop guessing. Start your pathway.</h2>
+      <p>Free, takes 3 minutes, no signup required to see your result.</p>
+      <a href="#" class="btn-primary-lg">Find My Germany Path →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="logo"><span class="logo-mark">C</span>CampusYar</div>
+        <p style="color:var(--text-muted); font-size:13.5px; margin-top:14px; max-width:280px;">Built by a student who learned the hard way. For every Pakistani student who deserves better.</p>
+      </div>
+      <div>
+        <h4>Product</h4>
+        <a href="#">Pathway Finder</a>
+        <a href="#">University Finder</a>
+        <a href="#">Checklist</a>
+      </div>
+      <div>
+        <h4>Guides</h4>
+        <a href="#">APS Certificate</a>
+        <a href="#">Blocked Account</a>
+        <a href="#">Visa Process</a>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 CampusYar. Not affiliated with DAAD.</span>
+      <span>campusyar.com</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
