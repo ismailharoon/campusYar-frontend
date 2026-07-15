@@ -19,6 +19,7 @@
       </div>
     </div>
 
+    <!-- Svg illustration flat-lay and floating cards restored! -->
     <div class="hero-art">
       <div class="art-disc"></div>
       <svg viewBox="0 0 400 380" xmlns="http://www.w3.org/2000/svg">
@@ -83,6 +84,7 @@
       <h2>Built so you never have to guess your next step.</h2>
     </div>
 
+    <!-- Feature Row 1: Stage Tracker -->
     <div class="feature-row">
       <div class="f-visual-rich">
         <!-- Backdrop Circle -->
@@ -152,6 +154,7 @@
           </svg>
         </div>
       </div>
+      
       <div class="f-text">
         <span class="who">Stage tracker</span>
         <h3>See exactly what's done, what's next, and what's overdue.</h3>
@@ -183,31 +186,65 @@
       </div>
     </div>
 
+    <!-- Feature Row 2: University Finder -->
     <div class="feature-row rev">
-      <div class="f-visual">
-        <div class="visual-card">
-          <svg viewBox="0 0 320 220" xmlns="http://www.w3.org/2000/svg">
-            <rect x="10" y="10" width="300" height="200" rx="10" fill="var(--paper)"/>
-            <rect x="34" y="30" width="110" height="80" rx="6" fill="#FFFDF7" stroke="var(--border)"/>
-            <rect x="44" y="42" width="90" height="8" rx="3" fill="var(--border)"/>
-            <rect x="44" y="58" width="60" height="8" rx="3" fill="var(--border)"/>
-            <rect x="44" y="78" width="70" height="18" rx="4" fill="var(--accent)"/>
-            <text x="79" y="90" text-anchor="middle" fill="#fff" font-family="Poppins" font-weight="700" font-size="9">TU Munich</text>
-            <rect x="156" y="30" width="110" height="80" rx="6" fill="#FFFDF7" stroke="var(--border)"/>
-            <rect x="166" y="42" width="90" height="8" rx="3" fill="var(--border)"/>
-            <rect x="166" y="58" width="60" height="8" rx="3" fill="var(--border)"/>
-            <rect x="166" y="78" width="70" height="18" rx="4" fill="var(--gold)"/>
-            <text x="201" y="90" text-anchor="middle" fill="#fff" font-family="Poppins" font-weight="700" font-size="9">RWTH Aachen</text>
-            <rect x="34" y="126" width="232" height="10" rx="4" fill="var(--border)"/>
-            <rect x="34" y="126" width="150" height="10" rx="4" fill="var(--accent)"/>
-            <text x="34" y="158" fill="var(--text-muted)" font-family="Inter" font-size="9">Matching your grades, budget &amp; APS field</text>
+      <div class="f-visual-rich uni-rich">
+        <!-- Backdrop Circle -->
+        <div class="visual-circle-bg"></div>
+
+        <!-- Main university campus/library image -->
+        <div class="main-photo-wrap">
+          <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=400&q=80" alt="University campus search" class="main-photo">
+        </div>
+
+        <!-- Floating Badges -->
+        <div class="rich-badge gpa">
+          <span class="badge-dot"></span>
+          GPA 3.4
+        </div>
+        
+        <div class="rich-badge aps-clear">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="badge-icon">
+            <path d="M20 6L9 17l-5-5"/>
+          </svg>
+          APS Clear
+        </div>
+
+        <div class="rich-badge matches">
+          <span class="badge-icon">🎯</span>
+          412 Matched
+        </div>
+
+        <!-- Floating Information Cards -->
+        <div class="rich-card tu-munich">
+          <div class="rc-label">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="rc-icon">
+              <path d="M20 6L9 17l-5-5"/>
+            </svg>
+            Admissions Fit
+          </div>
+          <div class="rc-val">TU Munich</div>
+        </div>
+
+        <div class="rich-card rwth-aachen">
+          <div class="rc-label">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="rc-icon">
+              <path d="M20 6L9 17l-5-5"/>
+            </svg>
+            Required ECTS
+          </div>
+          <div class="rc-val">RWTH Aachen</div>
+        </div>
+
+        <!-- Vector dome at bottom -->
+        <div class="rich-illustration check-seal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M12 8v4l3 3"/>
           </svg>
         </div>
-        <div class="f-tag" style="top:-14px; right:20px;">
-          <svg viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M15 9l-3 6-3-2 3-6z"/></svg>
-          412 programs matched
-        </div>
       </div>
+      
       <div class="f-text">
         <span class="who">University finder</span>
         <h3>DAAD's full database, filtered for a Pakistani transcript.</h3>
@@ -301,26 +338,33 @@
         </div>
       </div>
       
-      <!-- Right active card -->
+      <!-- Right active card with ENLARGED image -->
       <div class="index-card show">
-        <div class="who" [ngClass]="stages[selectedStageIndex].tag">
-          {{ stages[selectedStageIndex].tag === 'build' ? 'We build this' : 'We curate this' }}
+        <div class="card-grid">
+          <div class="card-text">
+            <div class="who" [ngClass]="stages[selectedStageIndex].tag">
+              {{ stages[selectedStageIndex].tag === 'build' ? 'We build this' : 'We curate this' }}
+            </div>
+            <h3>{{ stages[selectedStageIndex].title }}</h3>
+            <p>{{ stages[selectedStageIndex].desc }}</p>
+            <div class="index-progress">
+              <span
+                *ngFor="let idx of progressArray"
+                [class.filled]="idx <= selectedStageIndex"
+              ></span>
+            </div>
+            <a
+              [routerLink]="stages[selectedStageIndex].routerLink !== '#' ? stages[selectedStageIndex].routerLink : null"
+              [href]="stages[selectedStageIndex].routerLink === '#' ? 'javascript:void(0)' : null"
+              class="card-cta"
+            >
+              {{ stages[selectedStageIndex].link }} →
+            </a>
+          </div>
+          <div class="card-image-wrap" *ngIf="stages[selectedStageIndex].image">
+            <img [src]="stages[selectedStageIndex].image" [alt]="stages[selectedStageIndex].title" />
+          </div>
         </div>
-        <h3>{{ stages[selectedStageIndex].title }}</h3>
-        <p>{{ stages[selectedStageIndex].desc }}</p>
-        <div class="index-progress">
-          <span
-            *ngFor="let idx of progressArray"
-            [class.filled]="idx <= selectedStageIndex"
-          ></span>
-        </div>
-        <a
-          [routerLink]="stages[selectedStageIndex].routerLink !== '#' ? stages[selectedStageIndex].routerLink : null"
-          [href]="stages[selectedStageIndex].routerLink === '#' ? 'javascript:void(0)' : null"
-          class="card-cta"
-        >
-          {{ stages[selectedStageIndex].link }} →
-        </a>
       </div>
     </div>
   </div>
@@ -343,36 +387,6 @@
   </div>
 </section>
 
-<!-- ============ DECLARATION SECTION ============ -->
-<section class="declare-section">
-  <div class="wrap">
-    <div class="declare-form">
-      <div class="declare-header">
-        <span class="title">Declaration of Costs</span>
-        <span class="formno">Form CY-01</span>
-      </div>
-      <div class="declare-grid">
-        <div class="declare-col old">
-          <div class="who">Going Through a Consultant</div>
-          <div class="declare-row"><span class="label">Consultation fee</span><span class="val">PKR 40,000–150,000</span></div>
-          <div class="declare-row"><span class="label">University shortlisting</span><span class="val">Bundled, generic</span></div>
-          <div class="declare-row"><span class="label">SOP/LOR writing</span><span class="val">Extra charge</span></div>
-          <div class="declare-row"><span class="label">Waiting on replies</span><span class="val">Days at a time</span></div>
-          <div class="declare-row"><span class="label">Total cost</span><span class="val">PKR 60,000+</span></div>
-        </div>
-        <div class="declare-col new">
-          <div class="who">Going Through CampusYar</div>
-          <div class="declare-row"><span class="label">Pathway + University Finder</span><span class="val">PKR 0</span></div>
-          <div class="declare-row"><span class="label">University shortlisting</span><span class="val">Personalized, instant</span></div>
-          <div class="declare-row"><span class="label">SOP/LOR guidance</span><span class="val">Included</span></div>
-          <div class="declare-row"><span class="label">Waiting on replies</span><span class="val">None — self-serve</span></div>
-          <div class="declare-row"><span class="label">Total cost</span><span class="val">PKR 0</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ============ PROOF SECTION ============ -->
 <section class="proof-section">
   <div class="wrap">
@@ -380,7 +394,6 @@
       <div class="receipt">
         <div class="rlabel">Checklist — APS Certificate</div>
         <div class="ritem"><input type="checkbox" checked disabled /><span>Matric &amp; Inter certificates (attested)</span></div>
-        <div class="receipt-divider"></div>
         <div class="ritem"><input type="checkbox" checked disabled /><span>Bachelor's degree + transcript</span></div>
         <div class="ritem"><input type="checkbox" disabled /><span>CNIC + passport copy</span></div>
         <div class="ritem"><input type="checkbox" disabled /><span>APS fee — PKR 18,500 (2026)</span></div>
