@@ -44,7 +44,7 @@ export class ServicesPage implements OnInit, AfterViewInit {
       desc: 'Seven questions. One clear answer — which route to Germany actually fits your education level and academic background.',
       link: 'Try Pathway Finder',
       routerLink: '/eligibility',
-      image: 'assets/step1.png',
+      image: 'assets/stage1.png',
     },
     {
       icon: 'cap',
@@ -53,7 +53,7 @@ export class ServicesPage implements OnInit, AfterViewInit {
       desc: "Official university program database, filtered for Pakistani students — with APS and recognition notes attached to help you apply directly.",
       link: 'Search Universities',
       routerLink: '/universities',
-      image: 'assets/step2.png',
+      image: 'assets/uni-campus.png',
     },
     {
       icon: 'pen',
@@ -62,7 +62,7 @@ export class ServicesPage implements OnInit, AfterViewInit {
       desc: 'SOP, LOR and CV — structure and templates that match what German admissions committees actually expect and look for.',
       link: 'See Templates',
       routerLink: '#',
-      image: 'assets/step3.png',
+      image: 'assets/student-laptop.png',
     },
     {
       icon: 'chat',
@@ -71,7 +71,7 @@ export class ServicesPage implements OnInit, AfterViewInit {
       desc: 'The IELTS, TestDaF and German (A1–B2) resources worth your time — free channels, apps, and official practice tests.',
       link: 'Browse Resources',
       routerLink: '#',
-      image: 'assets/step4.png',
+      image: 'assets/stage4.png',
     },
     {
       icon: 'coin',
@@ -80,7 +80,7 @@ export class ServicesPage implements OnInit, AfterViewInit {
       desc: 'Blocked account setup, semester contributions, and realistic cost of living — in EUR and PKR, so nothing surprises you later.',
       link: 'Read the Guide',
       routerLink: '#',
-      image: 'assets/step5.png',
+      image: 'assets/stage5.png',
     },
     {
       icon: 'seal',
@@ -89,7 +89,7 @@ export class ServicesPage implements OnInit, AfterViewInit {
       desc: 'Costs, document checklists, and the exact step-by-step verification process for your APS appointment in Islamabad.',
       link: 'Read the Guide',
       routerLink: '#',
-      image: 'https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&w=500&q=80',
+      image: 'assets/docs-guidance.png',
     },
     {
       icon: 'passport',
@@ -98,7 +98,7 @@ export class ServicesPage implements OnInit, AfterViewInit {
       desc: 'Embassy booking tips, complete document requirements, and what actually happens inside the interview room.',
       link: 'Read the Guide',
       routerLink: '#',
-      image: 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=500&q=80',
+      image: 'assets/stage7.png',
     },
     {
       icon: 'plane',
@@ -107,7 +107,7 @@ export class ServicesPage implements OnInit, AfterViewInit {
       desc: 'City accommodation search, Anmeldung registration, opening a local bank account — your first two weeks, mapped.',
       link: 'Read the Guide',
       routerLink: '#',
-      image: 'https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=500&q=80',
+      image: 'assets/visa-arrival.png',
     },
   ];
 
